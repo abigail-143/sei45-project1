@@ -255,6 +255,27 @@ function openCard(user) {
   user.tableCards.push(user.hiddenDeck.pop());
 }
 
+// this function is used in checkTableCardsValue() //
+function countValue(array) {
+  let counts = array.reduce((prev, curr) => {
+    let count = prev.get(curr.food) || 0;
+    prev.set(curr.food, curr.value + count);
+    return prev;
+  }, new Map());
+
+  let tableCounts = [...counts].map(([key, value]) => {
+    return { key, value };
+  }); // this will give an array of objects that will have the food and their summed value as the key/value pairs //
+
+  for (let i = 0; i < tableCounts.length; i++) {
+    if (tableCounts[i].value == 5) {
+      console.log("yes");
+    } else {
+      console.log("no");
+    } // this is to check if there's a count of "5" for any food cards on the table //
+  }
+}
+
 // this is to check the value of the cards on the table
 function checkTableCardsValue() {
   if (selectedItem == "2") {
@@ -263,23 +284,7 @@ function checkTableCardsValue() {
       player1.tableCards[player1.tableCards.length - 1],
       player2.tableCards[player2.tableCards.length - 1]
     );
-    let counts = currentTableCards.reduce((prev, curr) => {
-      let count = prev.get(curr.food) || 0;
-      prev.set(curr.food, curr.value + count);
-      return prev;
-    }, new Map());
-
-    let tableCounts = [...counts].map(([key, value]) => {
-      return { key, value };
-    }); // this will give an array of objects that will have the food and their summed value as the key/value pairs //
-
-    for (let i = 0; i < tableCounts.length; i++) {
-      if (tableCounts[i].value == 5) {
-        console.log("yes");
-      } else {
-        console.log("no");
-      } // this is to check if there's a count of "5" for any food cards on the table //
-    }
+    countValue(currentTableCards);
   }
   if (selectedItem == "3") {
     let currentTableCards = [];
@@ -288,23 +293,7 @@ function checkTableCardsValue() {
       player2.tableCards[player2.tableCards.length - 1],
       player3.tableCards[player3.tableCards.length - 1]
     );
-    let counts = currentTableCards.reduce((prev, curr) => {
-      let count = prev.get(curr.food) || 0;
-      prev.set(curr.food, curr.value + count);
-      return prev;
-    }, new Map());
-
-    let tableCounts = [...counts].map(([key, value]) => {
-      return { key, value };
-    }); // this will give an array of objects that will have the food and their summed value as the key/value pairs //
-
-    for (let i = 0; i < tableCounts.length; i++) {
-      if (tableCounts[i].value == 5) {
-        console.log("yes");
-      } else {
-        console.log("no");
-      } // this is to check if there's a count of "5" for any food cards on the table //
-    }
+    countValue(currentTableCards);
   }
   if (selectedItem == "4") {
     let currentTableCards = [];
@@ -314,23 +303,7 @@ function checkTableCardsValue() {
       player3.tableCards[player3.tableCards.length - 1],
       player4.tableCards[player4.tableCards.length - 1]
     );
-    let counts = currentTableCards.reduce((prev, curr) => {
-      let count = prev.get(curr.food) || 0;
-      prev.set(curr.food, curr.value + count);
-      return prev;
-    }, new Map());
-
-    let tableCounts = [...counts].map(([key, value]) => {
-      return { key, value };
-    }); // this will give an array of objects that will have the food and their summed value as the key/value pairs //
-
-    for (let i = 0; i < tableCounts.length; i++) {
-      if (tableCounts[i].value == 5) {
-        console.log("yes");
-      } else {
-        console.log("no");
-      } // this is to check if there's a count of "5" for any food cards on the table //
-    }
+    countValue(currentTableCards);
   }
 }
 
