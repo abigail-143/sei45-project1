@@ -150,7 +150,7 @@ function countValue(array) {
 
 function checkTableCardsValue() {
   if (selectedItem == "2") {
-    if (player2.tableCards.length == 0) { // to check when only player1 has been distributed card but not player2
+    if (player2.tableCards.length == 0) { // to check when only player1 has opened card but not player2
       let currentTableCards = [player1.tableCards[0]];
       countValue(currentTableCards);
     } else {
