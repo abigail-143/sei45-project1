@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.hide {
+    display: none;
+}
+
+#starting-page {
+    border: 3px solid black;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 10%;
+}
+
+.game-writeup {
+    padding: 10px;
+    margin: 10px 0;
+    border: 3px solid green;
+    width: 50%;
+}
+
+.start-game {
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.div0 {
+    border: 3px solid green;
+    height: 20px;
+}
+
+.div1 {
+    border: 3px solid blue;
+    height: 100vh;
+    width: 100vw;
+}
+
+.div1-1 {
+    border: 3px solid greenyellow;
+    height: 100vh;
+    width: 85vw;
+}
+
+.div1-2 {
+    border: 3px solid black;
+    height: 100%;
+    width: 100%;
+}
+
+.div1-3 {
+    border: 3px solid fuchsia;
+    height: 70vh;
+    width: 80vw;
+}
+
+.div2 {
+    border: 3px solid pink;
+    height: 30vh;
+}
+
+.div3 {
+    border: 3px solid goldenrod;
+    width: 25%;
+    height: 100%;
+    display: flex;
+}
+
+.div4 {
+    border: 3px solid greenyellow;
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+
+.div5 {
+    border: 3px solid rosybrown;
+    width: 25%;
+    height: 100%;
+    display: flex;
+}
+
+.div6 {
+    border: 3px solid sandybrown;
+    width: 50%;
+    height: auto;
+}
+
+.img {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
