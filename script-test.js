@@ -78,9 +78,9 @@ const player1 = {
 const player2 = {
   name: "",
   tableCards: [
-    // { food: "ramen", value: 1, image: "./cards/ramen1.png" },
-    // { food: "ramen", value: 1, image: "./cards/ramen1.png" },
-    // { food: "ramen", value: 1, image: "./cards/ramen1.png" },
+    { food: "ramen", value: 1, image: "./cards/ramen1.png" },
+    { food: "ramen", value: 1, image: "./cards/ramen1.png" },
+    { food: "ramen", value: 1, image: "./cards/ramen1.png" },
   ],
   hiddenDeck: [],
   score: 0,
@@ -89,11 +89,16 @@ const player2 = {
 const player3 = {
   name: "",
   tableCards: [
-    // { food: "burger", value: 1, image: "./cards/burger1.png" },
-    // { food: "burger", value: 1, image: "./cards/burger1.png" },
-    // { food: "burger", value: 1, image: "./cards/burger1.png" },
+    { food: "burger", value: 1, image: "./cards/burger1.png" },
+    { food: "burger", value: 1, image: "./cards/burger1.png" },
+    { food: "burger", value: 1, image: "./cards/burger1.png" },
   ],
-  hiddenDeck: [],
+  hiddenDeck: [
+    { food: "nasi", value: 1, image: "./cards/nasi1.png" },
+    { food: "nasi", value: 1, image: "./cards/nasi1.png" },
+    { food: "burger", value: 1, image: "./cards/burger1.png" },
+    { food: "burger", value: 1, image: "./cards/burger1.png" },
+  ],
   score: 0,
 };
 
@@ -105,7 +110,12 @@ const player4 = {
     { food: "nasi", value: 1, image: "./cards/nasi1.png" },
     { food: "donut", value: 5, image: "./cards/donut5.png" },
   ],
-  hiddenDeck: [],
+  hiddenDeck: [
+    { food: "burger", value: 1, image: "./cards/burger1.png" },
+    { food: "burger", value: 1, image: "./cards/burger1.png" },
+    { food: "burger", value: 1, image: "./cards/burger1.png" },
+    { food: "burger", value: 1, image: "./cards/burger1.png" },
+  ],
   score: 0,
 };
 
@@ -127,6 +137,21 @@ const player4 = {
 
 // openCard(player1);
 // console.log(player1);
+
+function shuffleCardDeck(array) {
+  let currentIndex = array.length,
+    randomIndex;
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+  return array;
+}
 
 function countValue(array) {
   let counts = array.reduce((prev, curr) => {
@@ -174,3 +199,59 @@ console.log(x);
 
 // let x = checkCardsValue(player1.tableCards)
 // console.log(x)
+
+// this is to acticate the snatch color //
+function snatchAlert() {
+  window.addEventListener("keydown", (event) => {
+    if (selectedItem == "2") {
+      if (event.key == "z") {
+        document.getElementById("2p-p1-snatch").classList.add("snatch");
+        checkTableCardsValue();
+        return event.key;
+      }
+      if (event.key == "/") {
+        document.getElementById("2p-p2-snatch").classList.add("snatch");
+        checkTableCardsValue();
+        return event.key;
+      }
+    }
+    if (selectedItem == "3") {
+      if (event.key == "q") {
+        document.getElementById("3p-p1-snatch").classList.add("snatch");
+      }
+      if (event.key == "p") {
+        document.getElementById("3p-p2-snatch").classList.add("snatch");
+      }
+      if (event.key == "/") {
+        document.getElementById("3p-p3-snatch").classList.add("snatch");
+      }
+    }
+    if (selectedItem == "4") {
+      if (event.key == "q") {
+        document.getElementById("4p-p1-snatch").classList.add("snatch");
+      }
+      if (event.key == "p") {
+        document.getElementById("4p-p2-snatch").classList.add("snatch");
+      }
+      if (event.key == "z") {
+        document.getElementById("4p-p3-snatch").classList.add("snatch");
+      }
+      if (event.key == "/") {
+        document.getElementById("4p-p4-snatch").classList.add("snatch");
+      }
+    }
+  });
+}
+
+// player1.hiddenDeck = player1.hiddenDeck.concat(player2.tableCards, player1.tableCards)
+// shuffleCardDeck(player1.hiddenDeck)
+// player2.tableCards = []
+// player1.tableCards = []
+// console.log(player1.hiddenDeck)
+// console.log(player2.tableCards)
+// console.log(player1.tableCards)
+
+player3.hiddenDeck.push(player4.hiddenDeck.pop());
+shuffleCardDeck(player3.hiddenDeck);
+console.log(player3.hiddenDeck);
+console.log(player4.hiddenDeck);

@@ -268,10 +268,10 @@ function countValue(array) {
   for (let i = 0; i < tableCounts.length; i++) {
     if (tableCounts[i].value == 5) {
       console.log("yes");
-      return 1
+      return 1;
     } else {
       console.log("no");
-      return 0
+      return 0;
     } // this is to check if there's a count of "5" for any food cards on the table //
   }
 }
@@ -359,11 +359,13 @@ window.addEventListener("keydown", (event) => {
   if (selectedItem == "2") {
     if (event.key == "z") {
       document.getElementById("2p-p1-snatch").classList.add("snatch");
-      checkTableCardsValue()
+      checkTableCardsValue();
+      return event.key;
     }
     if (event.key == "/") {
       document.getElementById("2p-p2-snatch").classList.add("snatch");
-      checkTableCardsValue()
+      checkTableCardsValue();
+      return event.key;
     }
   }
   if (selectedItem == "3") {
@@ -472,3 +474,33 @@ window.addEventListener("keydown", (event) => {
 // while (playing_game) {
 
 // }
+
+function awardCards() {
+  if (selectedItem == "2") {
+    // if player1 snatched and if checkTableCardsValue has a 5
+    player1.hiddenDeck = player1.hiddenDeck.concat(player1.tableCards, player2.tableCards);
+    shuffleCardDeck(player1.hiddenDeck);
+    player1.tableCards = [];
+    player2.tableCards = [];
+    updateScore(player1);
+    updateScore(player2);
+    // if player1 snatched and if checkTableCardsValue does not have a 5
+    player2.hiddenDeck.push(player1.hiddenDeck.pop())
+    shuffleCardDeck(player2.hiddenDeck);
+    updateScore(player1);
+    updateScore(player2);
+    // if player2 snatched and if checkTableCardsValue has a 5
+    player2.hiddenDeck = player2.hiddenDeck.concat(player1.tableCards, player2.tableCards);
+    shuffleCardDeck(player2.hiddenDeck);
+    player1.tableCards = [];
+    player2.tableCards = [];
+    updateScore(player1);
+    updateScore(player2);
+    // if player2 snatched and if checkTableCardsValue does not have a 5
+    player1.hiddenDeck.push(player2.hiddenDeck.pop())
+    shuffleCardDeck(player1.hiddenDeck);
+    updateScore(player1);
+    updateScore(player2);
+
+  }
+}
