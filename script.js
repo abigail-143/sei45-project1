@@ -554,4 +554,87 @@ function awardCards() {
     updateScore(player2);
     updateScore(player3);
   }
+  if (selectedItem == "4") {
+    // if player1 snatch (check key pressed?) and if checkTableCardsValue has a 5
+    player1.hiddenDeck = player1.hiddenDeck.concat(
+      player1.tableCards,
+      player2.tableCards,
+      player3.tableCards,
+      player4.tableCards
+    );
+    shuffleCardDeck(player1.hiddenDeck);
+    player1.tableCards = [];
+    player2.tableCards = [];
+    player3.tableCards = [];
+    player4.tableCards = [];
+    // if player1 snatch and if checkTableCardsValue does not have a 5
+    player2.hiddenDeck.push(player1.hiddenDeck.pop());
+    shuffleCardDeck(player2.hiddenDeck);
+    player3.hiddenDeck.push(player1.hiddenDeck.pop());
+    shuffleCardDeck(player3.hiddenDeck);
+    player4.hiddenDeck.push(player1.hiddenDeck.pop());
+    shuffleCardDeck(player4.hiddenDeck);
+    // if player2 snatch and if checkTableCardsValue has a 5
+    player2.hiddenDeck = player2.hiddenDeck.concat(
+      player1.tableCards,
+      player2.tableCards,
+      player3.tableCards,
+      player4.tableCards
+    );
+    shuffleCardDeck(player2.hiddenDeck);
+    player1.tableCards = [];
+    player2.tableCards = [];
+    player3.tableCards = [];
+    player4.tableCards = [];
+    // if player2 snatch and if checkTableCardsValue does not have a 5
+    player1.hiddenDeck.push(player2.hiddenDeck.pop());
+    shuffleCardDeck(player1.hiddenDeck);
+    player3.hiddenDeck.push(player2.hiddenDeck.pop());
+    shuffleCardDeck(player3.hiddenDeck);
+    player4.hiddenDeck.push(player2.hiddenDeck.pop());
+    shuffleCardDeck(player4.hiddenDeck);
+    // if player3 snatch and if checkTableCardsValue has a 5
+    player3.hiddenDeck = player3.hiddenDeck.concat(
+      player1.tableCards,
+      player2.tableCards,
+      player3.tableCards,
+      player4.tableCards
+    );
+    shuffleCardDeck(player3.hiddenDeck);
+    player1.tableCards = [];
+    player2.tableCards = [];
+    player3.tableCards = [];
+    player4.tableCards = [];
+    // if player3 snatch and if checkTableCardsValue does not have a 5
+    player1.hiddenDeck.push(player3.hiddenDeck.pop());
+    shuffleCardDeck(player1.hiddenDeck);
+    player2.hiddenDeck.push(player3.hiddenDeck.pop());
+    shuffleCardDeck(player2.hiddenDeck);
+    player4.hiddenDeck.push(player3.hiddenDeck.pop());
+    shuffleCardDeck(player4.hiddenDeck);
+    // if player4 snatch and if checkTableCardsValue has a 5
+    player4.hiddenDeck = player4.hiddenDeck.concat(
+      player1.tableCards,
+      player2.tableCards,
+      player3.tableCards,
+      player4.tableCards
+    );
+    shuffleCardDeck(player4.hiddenDeck);
+    player1.tableCards = [];
+    player2.tableCards = [];
+    player3.tableCards = [];
+    player4.tableCards = [];
+    // if player4 snatch and if checkTableCardsValue does not have a 5
+    player1.hiddenDeck.push(player4.hiddenDeck.pop());
+    shuffleCardDeck(player1.hiddenDeck);
+    player2.hiddenDeck.push(player4.hiddenDeck.pop());
+    shuffleCardDeck(player2.hiddenDeck);
+    player3.hiddenDeck.push(player4.hiddenDeck.pop());
+    shuffleCardDeck(player3.hiddenDeck);
+    // wrap the above in their respective "if"s then
+    updateScore(player1);
+    updateScore(player2);
+    updateScore(player3);
+    updateScore(player4);
+  }
 }
