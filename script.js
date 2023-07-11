@@ -142,11 +142,13 @@ function updatePlayersName() {
   player2.name = document.querySelector("#player2-name").value;
   player3.name = document.querySelector("#player3-name").value;
   player4.name = document.querySelector("#player4-name").value;
+
+  player2.tableCards = [];
 }
-let nameInput = document.querySelectorAll(".form-control");
-nameInput.forEach(function (eachInput) {
-  eachInput.addEventListener("input", updatePlayersName);
-}); // this works
+// let nameInput = document.querySelectorAll(".form-control");
+// nameInput.forEach(function (eachInput) {
+//   eachInput.addEventListener("input", updatePlayersName);
+// }); // this works?
 
 // this will start the game and set up the player's name and player's initial score (which should be 14 each)
 function hideStartPage() {
@@ -185,6 +187,9 @@ document
   .querySelector(".start-game")
   .addEventListener("click", distributeCardDeckToPlayers); // this works
 // distributeCardDeckToPlayers need to come before hideStartPage, else the score will show undefined //
+document
+  .querySelector(".start-game")
+  .addEventListener("click", updatePlayersName);
 document.querySelector(".start-game").addEventListener("click", hideStartPage); // this works
 
 function distributeCardDeckToPlayers() {
