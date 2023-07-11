@@ -279,21 +279,40 @@ function countValue(array) {
 // this is to check the value of the cards on the table
 function checkTableCardsValue() {
   if (selectedItem == "2") {
-    let currentTableCards = [];
-    currentTableCards.push(
-      player1.tableCards[player1.tableCards.length - 1],
-      player2.tableCards[player2.tableCards.length - 1]
-    );
-    countValue(currentTableCards);
+    if (player2.tableCards.length == 0) {
+      // to catch when only player1 has open card but not player2 //
+      let currentTableCards = [player1.tableCards[0]];
+      countValue(currentTableCards);
+    } else {
+      let currentTableCards = [];
+      currentTableCards.push(
+        player1.tableCards[player1.tableCards.length - 1],
+        player2.tableCards[player2.tableCards.length - 1]
+      );
+      countValue(currentTableCards);
+    }
   }
   if (selectedItem == "3") {
-    let currentTableCards = [];
-    currentTableCards.push(
-      player1.tableCards[player1.tableCards.length - 1],
-      player2.tableCards[player2.tableCards.length - 1],
-      player3.tableCards[player3.tableCards.length - 1]
-    );
-    countValue(currentTableCards);
+    if (player2.tableCards.length == 0 && player3.tableCards.length == 0) {
+      let currentTableCards = [player1.tableCards[0]];
+      countValue(currentTableCards);
+    }
+    if (
+      player1.tableCards.length !== 0 &&
+      player2.tableCards.length !== 0 &&
+      player3.tableCards.length == 0
+    ) {
+      let currentTableCards = [player1.tableCards[0], player2.tableCards[0]];
+      countValue(currentTableCards);
+    } else {
+      let currentTableCards = [];
+      currentTableCards.push(
+        player1.tableCards[player1.tableCards.length - 1],
+        player2.tableCards[player2.tableCards.length - 1],
+        player3.tableCards[player3.tableCards.length - 1]
+      );
+      countValue(currentTableCards);
+    }
   }
   if (selectedItem == "4") {
     let currentTableCards = [];
