@@ -142,17 +142,21 @@ function countValue(array) {
   for (let i = 0; i < tableCounts.length; i++) {
     if (tableCounts[i].value == 5) {
       console.log("yes");
+      return 1;
     } else {
       console.log("no");
+      return 0;
     } // this is to check if there's a count of "5" for any food cards on the table //
   }
 }
 
 function checkTableCardsValue() {
   if (selectedItem == "2") {
-    if (player2.tableCards.length == 0) { // to check when only player1 has opened card but not player2
+    if (player2.tableCards.length == 0) {
+      // to check when only player1 has opened card but not player2
       let currentTableCards = [player1.tableCards[0]];
-      countValue(currentTableCards);
+      // countValue(currentTableCards);
+      return countValue(currentTableCards);
     } else {
       let currentTableCards = [];
       currentTableCards.push(
@@ -165,7 +169,8 @@ function checkTableCardsValue() {
 }
 
 let selectedItem = "2";
-checkTableCardsValue();
+let x = checkTableCardsValue();
+console.log(x);
 
 // let x = checkCardsValue(player1.tableCards)
 // console.log(x)
