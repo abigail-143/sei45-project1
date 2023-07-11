@@ -294,7 +294,12 @@ function checkTableCardsValue() {
     if (player2.tableCards.length == 0 && player3.tableCards.length == 0) {
       let currentTableCards = [player1.tableCards[0]];
       countValue(currentTableCards);
-    } else {
+    } 
+    else if (player1.tableCards.length != 0 && player2.tableCards.length != 0 && player3.tableCards.length == 0) {
+      let currentTableCards = [player1.tableCards[0], player2.tableCards[0]];
+      countValue(currentTableCards);
+    }
+    else {
       let currentTableCards = [];
       currentTableCards.push(
         player1.tableCards[player1.tableCards.length - 1],
