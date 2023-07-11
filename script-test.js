@@ -78,9 +78,9 @@ const player1 = {
 const player2 = {
   name: "",
   tableCards: [
-    { food: "ramen", value: 1, image: "./cards/ramen1.png" },
-    { food: "ramen", value: 1, image: "./cards/ramen1.png" },
-    { food: "ramen", value: 1, image: "./cards/ramen1.png" },
+    // { food: "ramen", value: 1, image: "./cards/ramen1.png" },
+    // { food: "ramen", value: 1, image: "./cards/ramen1.png" },
+    // { food: "ramen", value: 1, image: "./cards/ramen1.png" },
   ],
   hiddenDeck: [],
   score: 0,
@@ -130,29 +130,48 @@ const player4 = {
 
 function checkTableCardsValue() {
   if (selectedItem == "2") {
-    let currentTableCards = [];
-    currentTableCards.push(
-      player1.tableCards[player1.tableCards.length - 1],
-      player2.tableCards[player2.tableCards.length - 1]
-      //   player3.tableCards[player3.tableCards.length - 1],
-      //   player4.tableCards[player4.tableCards.length - 1]
-    );
-    let counts = currentTableCards.reduce((prev, curr) => {
-      let count = prev.get(curr.food) || 0;
-      prev.set(curr.food, curr.value + count);
-      return prev;
-    }, new Map());
+    if (player2.tableCards.length == 0) {
+      let currentTableCards = [player1.tableCards[0]];
+      let counts = currentTableCards.reduce((prev, curr) => {
+        let count = prev.get(curr.food) || 0;
+        prev.set(curr.food, curr.value + count);
+        return prev;
+      }, new Map());
 
-    let tableCounts = [...counts].map(([key, value]) => {
-      return { key, value };
-    }); // this will give an array of objects that will have the food and their summed value as the key/value pairs //
+      let tableCounts = [...counts].map(([key, value]) => {
+        return { key, value };
+      }); // this will give an array of objects that will have the food and their summed value as the key/value pairs //
 
-    for (let i = 0; i < tableCounts.length; i++) {
-      if (tableCounts[i].value == 5) {
-        console.log("yes");
-      } else {
-        console.log("no");
-      } // this is to check if there's a count of "5" for any food cards on the table //
+      for (let i = 0; i < tableCounts.length; i++) {
+        if (tableCounts[i].value == 5) {
+          console.log("yes");
+        } else {
+          console.log("no");
+        } // this is to check if there's a count of "5" for any food cards on the table //
+      }
+    } else {
+      let currentTableCards = [];
+      currentTableCards.push(
+        player1.tableCards[player1.tableCards.length - 1],
+        player2.tableCards[player2.tableCards.length - 1]
+      );
+      let counts = currentTableCards.reduce((prev, curr) => {
+        let count = prev.get(curr.food) || 0;
+        prev.set(curr.food, curr.value + count);
+        return prev;
+      }, new Map());
+
+      let tableCounts = [...counts].map(([key, value]) => {
+        return { key, value };
+      }); // this will give an array of objects that will have the food and their summed value as the key/value pairs //
+
+      for (let i = 0; i < tableCounts.length; i++) {
+        if (tableCounts[i].value == 5) {
+          console.log("yes");
+        } else {
+          console.log("no");
+        } // this is to check if there's a count of "5" for any food cards on the table //
+      }
     }
   }
 }
