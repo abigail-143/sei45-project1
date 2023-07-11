@@ -162,29 +162,22 @@ function hideStartPage() {
   if (selectedItem === "3") {
     document.querySelector("#players3-page").classList.toggle("hide");
     document.getElementById("3p-p1-name").innerText = player1.name;
-    document.getElementById("3p-p1-score").innerText =
-      player1.hiddenDeck.length;
+    document.getElementById("3p-p1-score").innerText = player1.score;
     document.getElementById("3p-p2-name").innerText = player2.name;
-    document.getElementById("3p-p2-score").innerText =
-      player2.hiddenDeck.length;
+    document.getElementById("3p-p2-score").innerText = player2.score;
     document.getElementById("3p-p3-name").innerText = player3.name;
-    document.getElementById("3p-p3-score").innerText =
-      player3.hiddenDeck.length;
+    document.getElementById("3p-p3-score").innerText = player3.score;
   }
   if (selectedItem === "4") {
     document.querySelector("#players4-page").classList.toggle("hide");
     document.getElementById("4p-p1-name").innerText = player1.name;
-    document.getElementById("4p-p1-score").innerText =
-      player1.hiddenDeck.length;
+    document.getElementById("4p-p1-score").innerText = player1.score;
     document.getElementById("4p-p2-name").innerText = player2.name;
-    document.getElementById("4p-p2-score").innerText =
-      player2.hiddenDeck.length;
+    document.getElementById("4p-p2-score").innerText = player2.score;
     document.getElementById("4p-p3-name").innerText = player3.name;
-    document.getElementById("4p-p3-score").innerText =
-      player3.hiddenDeck.length;
+    document.getElementById("4p-p3-score").innerText = player3.score;
     document.getElementById("4p-p4-name").innerText = player4.name;
-    document.getElementById("4p-p4-score").innerText =
-      player4.hiddenDeck.length;
+    document.getElementById("4p-p4-score").innerText = player4.score;
   }
 }
 
@@ -295,14 +288,6 @@ function checkTableCardsValue() {
   if (selectedItem == "3") {
     if (player2.tableCards.length == 0 && player3.tableCards.length == 0) {
       let currentTableCards = [player1.tableCards[0]];
-      countValue(currentTableCards);
-    }
-    if (
-      player1.tableCards.length !== 0 &&
-      player2.tableCards.length !== 0 &&
-      player3.tableCards.length == 0
-    ) {
-      let currentTableCards = [player1.tableCards[0], player2.tableCards[0]];
       countValue(currentTableCards);
     } else {
       let currentTableCards = [];
