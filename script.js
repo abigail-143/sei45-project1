@@ -268,8 +268,10 @@ function countValue(array) {
   for (let i = 0; i < tableCounts.length; i++) {
     if (tableCounts[i].value == 5) {
       console.log("yes");
+      return 1
     } else {
       console.log("no");
+      return 0
     } // this is to check if there's a count of "5" for any food cards on the table //
   }
 }
@@ -357,9 +359,11 @@ window.addEventListener("keydown", (event) => {
   if (selectedItem == "2") {
     if (event.key == "z") {
       document.getElementById("2p-p1-snatch").classList.add("snatch");
+      checkTableCardsValue()
     }
     if (event.key == "/") {
       document.getElementById("2p-p2-snatch").classList.add("snatch");
+      checkTableCardsValue()
     }
   }
   if (selectedItem == "3") {
