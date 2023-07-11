@@ -294,12 +294,14 @@ function checkTableCardsValue() {
     if (player2.tableCards.length == 0 && player3.tableCards.length == 0) {
       let currentTableCards = [player1.tableCards[0]];
       countValue(currentTableCards);
-    } 
-    else if (player1.tableCards.length != 0 && player2.tableCards.length != 0 && player3.tableCards.length == 0) {
+    } else if (
+      player1.tableCards.length != 0 &&
+      player2.tableCards.length != 0 &&
+      player3.tableCards.length == 0
+    ) {
       let currentTableCards = [player1.tableCards[0], player2.tableCards[0]];
       countValue(currentTableCards);
-    }
-    else {
+    } else {
       let currentTableCards = [];
       currentTableCards.push(
         player1.tableCards[player1.tableCards.length - 1],
@@ -310,14 +312,43 @@ function checkTableCardsValue() {
     }
   }
   if (selectedItem == "4") {
-    let currentTableCards = [];
-    currentTableCards.push(
-      player1.tableCards[player1.tableCards.length - 1],
-      player2.tableCards[player2.tableCards.length - 1],
-      player3.tableCards[player3.tableCards.length - 1],
-      player4.tableCards[player4.tableCards.length - 1]
-    );
-    countValue(currentTableCards);
+    if (
+      player2.tableCards.length == 0 &&
+      player3.tableCards.length == 0 &&
+      player4.tableCards.length == 0
+    ) {
+      let currentTableCards = [player1.tableCards[0]];
+      countValue(currentTableCards);
+    } else if (
+      player1.tableCards.length != 0 &&
+      player2.tableCards.length != 0 &&
+      player3.tableCards.length == 0 &&
+      player4.tableCards.length == 0
+    ) {
+      let currentTableCards = [player1.tableCards[0], player2.tableCards[0]];
+      countValue(currentTableCards);
+    } else if (
+      player1.tableCards.length != 0 &&
+      player2.tableCards.length != 0 &&
+      player3.tableCards.length != 0 &&
+      player4.tableCards.length == 0
+    ) {
+      let currentTableCards = [
+        player1.tableCards[0],
+        player2.tableCards[0],
+        player3.tableCards[0],
+      ];
+      countValue(currentTableCards);
+    } else {
+      let currentTableCards = [];
+      currentTableCards.push(
+        player1.tableCards[player1.tableCards.length - 1],
+        player2.tableCards[player2.tableCards.length - 1],
+        player3.tableCards[player3.tableCards.length - 1],
+        player4.tableCards[player4.tableCards.length - 1]
+      );
+      countValue(currentTableCards);
+    }
   }
 }
 
