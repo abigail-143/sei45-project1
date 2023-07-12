@@ -708,7 +708,7 @@ window.addEventListener("keydown", (event) => {
       let newCard = player4.tableCards[player4.tableCards.length - 1];
       document.getElementById("4p-p4-opencard").src = newCard.image;
     }
-    checkForWinner()
+    checkForWinner();
   }
 });
 
@@ -840,7 +840,7 @@ function awardCards() {
       document.getElementById("3p-p2-snatch").classList.remove("snatch");
       document.getElementById("3p-p3-snatch").classList.remove("snatch");
     }, 200);
-    checkForWinner()
+    checkForWinner();
   }
   if (selectedItem == "4") {
     // if player1 snatch (check key pressed?) and if checkTableCardsValue has a 5
@@ -964,7 +964,7 @@ function awardCards() {
       document.getElementById("4p-p3-snatch").classList.remove("snatch");
       document.getElementById("4p-p4-snatch").classList.remove("snatch");
     }, 200);
-    checkForWinner()
+    checkForWinner();
   }
 }
 
@@ -989,16 +989,36 @@ function checkForWinner() {
     }
   }
   if (selectedItem == "4") {
-    if (player1.score != 0 && player2.score == 0 && player3.score == 0 && player4.score == 0) {
+    if (
+      player1.score != 0 &&
+      player2.score == 0 &&
+      player3.score == 0 &&
+      player4.score == 0
+    ) {
       document.getElementById("4p-winner").innerText = "PLAYER 1 IS THE WINNER";
     }
-    if (player1.score == 0 && player2.score != 0 && player3.score == 0 && player4.score == 0) {
+    if (
+      player1.score == 0 &&
+      player2.score != 0 &&
+      player3.score == 0 &&
+      player4.score == 0
+    ) {
       document.getElementById("4p-winner").innerText = "PLAYER 2 IS THE WINNER";
     }
-    if (player1.score == 0 && player2.score == 0 && player3.score != 0 && player4.score == 0) {
+    if (
+      player1.score == 0 &&
+      player2.score == 0 &&
+      player3.score != 0 &&
+      player4.score == 0
+    ) {
       document.getElementById("4p-winner").innerText = "PLAYER 3 IS THE WINNER";
     }
-    if (player1.score == 0 && player2.score == 0 && player3.score == 0 && player4.score != 0) {
+    if (
+      player1.score == 0 &&
+      player2.score == 0 &&
+      player3.score == 0 &&
+      player4.score != 0
+    ) {
       document.getElementById("4p-winner").innerText = "PLAYER 4 IS THE WINNER";
     }
   }
