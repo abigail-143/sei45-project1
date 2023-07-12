@@ -264,15 +264,19 @@ function countValue(array) {
   let tableCounts = [...counts].map(([key, value]) => {
     return { key, value };
   }); // this will give an array of objects that will have the food and their summed value as the key/value pairs //
+  console.log("tableCounts")
+  console.log(tableCounts)
 
   for (let i = 0; i < tableCounts.length; i++) {
-    if (tableCounts[i].value == 5) {
+    if (tableCounts[i].value === 5) {
       console.log("yes");
       return (allowSnatch = "yes");
-    } else {
-      console.log("no");
-      return (allowSnatch = "no");
-    } // this is to check if there's a count of "5" for any food cards on the table //
+    }
+    
+    // } else {
+    //   console.log("no");
+    //   return (allowSnatch = "no");
+    // } // this is to check if there's a count of "5" for any food cards on the table //
   }
 }
 
@@ -290,6 +294,8 @@ function checkTableCardsValue() {
         player1.tableCards[player1.tableCards.length - 1],
         player2.tableCards[player2.tableCards.length - 1]
       );
+      console.log("currentTableCards")
+      console.log(currentTableCards)
       countValue(currentTableCards);
     }
   }
@@ -361,14 +367,14 @@ window.addEventListener("keydown", (event) => {
   if (selectedItem == "2") {
     if (event.key == "z") {
       document.getElementById("2p-p1-snatch").classList.add("snatch");
-      checkTableCardsValue();
       snatchKeyPressed = "z";
+      checkTableCardsValue();
       awardCards();
     }
     if (event.key == "/") {
       document.getElementById("2p-p2-snatch").classList.add("snatch");
-      checkTableCardsValue();
       snatchKeyPressed = "/";
+      checkTableCardsValue();
       awardCards();
     }
   }
@@ -482,7 +488,7 @@ window.addEventListener("keydown", (event) => {
 function awardCards() {
   if (selectedItem == "2") {
     // if player1 snatched (check key pressed?) and if checkTableCardsValue has a 5
-    if (snatchKeyPressed == "z" && allowSnatch == "yes") {
+    if (snatchKeyPressed === "z" && allowSnatch === "yes") {
       console.log("player1 snatch successful");
       player1.hiddenDeck = player1.hiddenDeck.concat(
         player1.tableCards,
