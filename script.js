@@ -988,13 +988,25 @@ function checkForWinner() {
     }
   }
   if (selectedItem == "3") {
-    if (player1.score != 0 && player2.score == 0 && player3.score == 0) {
+    if (
+      player1.score != 0 &&
+      player2.score == 0 &&
+      player3.score == 0 &&
+    ) {
       document.getElementById("3p-winner").innerText = "PLAYER 1 IS THE WINNER";
     }
-    if (player1.score == 0 && player2.score != 0 && player3.score == 0) {
+    if (
+      player1.score == 0 &&
+      player2.score != 0 &&
+      player3.score == 0 &&
+    ) {
       document.getElementById("3p-winner").innerText = "PLAYER 2 IS THE WINNER";
     }
-    if (player1.score == 0 && player2.score == 0 && player3.score != 0) {
+    if (
+      player1.score == 0 &&
+      player2.score == 0 &&
+      player3.score != 0 &&
+    ) {
       document.getElementById("3p-winner").innerText = "PLAYER 3 IS THE WINNER";
     }
   }
