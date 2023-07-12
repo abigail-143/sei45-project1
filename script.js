@@ -115,8 +115,6 @@ function updatePlayersName() {
   player2.name = document.querySelector("#player2-name").value;
   player3.name = document.querySelector("#player3-name").value;
   player4.name = document.querySelector("#player4-name").value;
-
-  player2.tableCards = [];
 }
 
 // this will start the game and set up the player's name and player's initial score (which should be 14 each)
@@ -212,6 +210,18 @@ function updateScore(user) {
     document.getElementById("3p-p1-score").innerText = player1.score;
     document.getElementById("3p-p2-score").innerText = player2.score;
     document.getElementById("3p-p3-score").innerText = player3.score;
+    if (player1.score == 0) {
+      console.log(player1.score);
+      document.getElementById("3p-p1-snatch").innerText = "You lost.";
+    }
+    if (player2.score == 0) {
+      console.log(player2.score);
+      document.getElementById("3p-p2-snatch").innerText = "You lost.";
+    }
+    if (player3.score == 0) {
+      console.log(player3.score);
+      document.getElementById("3p-p3-snatch").innerText = "You lost.";
+    }
   }
   if (selectedItem == "4") {
     document.getElementById("4p-p1-score").innerText = player1.score;
