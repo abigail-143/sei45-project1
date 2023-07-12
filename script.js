@@ -268,15 +268,16 @@ function countValue(array) {
   for (let i = 0; i < tableCounts.length; i++) {
     if (tableCounts[i].value == 5) {
       console.log("yes");
-      return 1;
+      return (allowSnatch = "yes");
     } else {
       console.log("no");
-      return 0;
+      return (allowSnatch = "no");
     } // this is to check if there's a count of "5" for any food cards on the table //
   }
 }
 
 // this is to check the value of the cards on the table
+let allowSnatch = "";
 function checkTableCardsValue() {
   if (selectedItem == "2") {
     if (player2.tableCards.length == 0) {
@@ -355,18 +356,20 @@ function checkTableCardsValue() {
 }
 
 // this is to acticate the snatch color //
-let keypressed = ""
+let snatchKeyPressed = "";
 window.addEventListener("keydown", (event) => {
   if (selectedItem == "2") {
     if (event.key == "z") {
       document.getElementById("2p-p1-snatch").classList.add("snatch");
       checkTableCardsValue();
-      keypressed = "z"
+      snatchKeyPressed = "z";
+      awardCards();
     }
     if (event.key == "/") {
       document.getElementById("2p-p2-snatch").classList.add("snatch");
       checkTableCardsValue();
-      keypressed = "/"
+      snatchKeyPressed = "/";
+      awardCards();
     }
   }
   if (selectedItem == "3") {
@@ -479,30 +482,43 @@ window.addEventListener("keydown", (event) => {
 function awardCards() {
   if (selectedItem == "2") {
     // if player1 snatched (check key pressed?) and if checkTableCardsValue has a 5
-    player1.hiddenDeck = player1.hiddenDeck.concat(
-      player1.tableCards,
-      player2.tableCards
-    );
-    shuffleCardDeck(player1.hiddenDeck);
-    player1.tableCards = [];
-    player2.tableCards = [];
+    if (snatchKeyPressed == "z" && allowSnatch == "yes") {
+      console.log("player1 snatch successful");
+      player1.hiddenDeck = player1.hiddenDeck.concat(
+        player1.tableCards,
+        player2.tableCards
+      );
+      shuffleCardDeck(player1.hiddenDeck);
+      player1.tableCards = [];
+      player2.tableCards = [];
+    }
     // if player1 snatched and if checkTableCardsValue does not have a 5
-    player2.hiddenDeck.push(player1.hiddenDeck.pop());
-    shuffleCardDeck(player2.hiddenDeck);
+    if (snatchKeyPressed == "z" && allowSnatch == "no") {
+      console.log("player1 snatch NOT successful");
+      player2.hiddenDeck.push(player1.hiddenDeck.pop());
+      shuffleCardDeck(player2.hiddenDeck);
+    }
     // if player2 snatched and if checkTableCardsValue has a 5
-    player2.hiddenDeck = player2.hiddenDeck.concat(
-      player1.tableCards,
-      player2.tableCards
-    );
-    shuffleCardDeck(player2.hiddenDeck);
-    player1.tableCards = [];
-    player2.tableCards = [];
+    if (snatchKeyPressed == "/" && allowSnatch == "yes") {
+      console.log("player2 snatch successful");
+      player2.hiddenDeck = player2.hiddenDeck.concat(
+        player1.tableCards,
+        player2.tableCards
+      );
+      shuffleCardDeck(player2.hiddenDeck);
+      player1.tableCards = [];
+      player2.tableCards = [];
+    }
     // if player2 snatched and if checkTableCardsValue does not have a 5
-    player1.hiddenDeck.push(player2.hiddenDeck.pop());
-    shuffleCardDeck(player1.hiddenDeck);
+    if (snatchKeyPressed == "/" && allowSnatch == "no") {
+      console.log("player2 snatch NOT successful");
+      player1.hiddenDeck.push(player2.hiddenDeck.pop());
+      shuffleCardDeck(player1.hiddenDeck);
+    }
     // wrap the above in their respective "if"s then
     updateScore(player1);
     updateScore(player2);
+    console.log("scores updated");
   }
   if (selectedItem == "3") {
     // if player1 snatched (check key pressed?) and if checkTableCardsValue has a 5
