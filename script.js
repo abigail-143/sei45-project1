@@ -386,10 +386,10 @@ window.addEventListener("keydown", (event) => {
     if (event.key == "p") {
       document.getElementById("4p-p2-snatch").classList.add("snatch");
     }
-    if (event.key == "z") {
+    if (event.key == "/") {
       document.getElementById("4p-p3-snatch").classList.add("snatch");
     }
-    if (event.key == "/") {
+    if (event.key == "z") {
       document.getElementById("4p-p4-snatch").classList.add("snatch");
     }
   }
@@ -451,14 +451,14 @@ window.addEventListener("keydown", (event) => {
       let newCard = player2.tableCards[player2.tableCards.length - 1];
       document.getElementById("4p-p2-opencard").src = newCard.image;
     }
-    if (event.key == "x") {
+    if (event.key == ".") {
       //p3 open card
       openCard(player3);
       updateScore(player3);
       let newCard = player3.tableCards[player3.tableCards.length - 1];
       document.getElementById("4p-p3-opencard").src = newCard.image;
     }
-    if (event.key == ".") {
+    if (event.key == "x") {
       //p4 open card
       openCard(player4);
       updateScore(player4);
