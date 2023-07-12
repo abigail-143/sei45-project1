@@ -34,3 +34,7 @@ https://stackoverflow.com/questions/19233283/sum-javascript-object-propertya-val
 BUG
 in 2 players environment
 - if player1 show card, and it's snatched, when player2 play card and want to snatch again, player1's tableCards is empty so it can run the sequence // need to write the code for if player1 has no cards but player2 has.
+
+need to put in the "else" if not once there's a successful snatch, the allowSnatch will always be "yes"
+but if there's an else and there's 2 types of food and the first type is not 5 but the second type is the if/else will only catch the first as "no" and return
+SOLVED: JUST USE ONLY AN "IF" THEN RESET THE allowSnatch variable to NO along with the updateScore portion

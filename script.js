@@ -264,24 +264,23 @@ function countValue(array) {
   let tableCounts = [...counts].map(([key, value]) => {
     return { key, value };
   }); // this will give an array of objects that will have the food and their summed value as the key/value pairs //
-  console.log("tableCounts")
-  console.log(tableCounts)
+  console.log("tableCounts");
+  console.log(tableCounts);
 
   for (let i = 0; i < tableCounts.length; i++) {
     if (tableCounts[i].value === 5) {
-      console.log("yes");
       return (allowSnatch = "yes");
     }
-    
-    // } else {
-    //   console.log("no");
-    //   return (allowSnatch = "no");
+
+    // else {
+    //  console.log("no");
+    //  return (allowSnatch = "no");
     // } // this is to check if there's a count of "5" for any food cards on the table //
   }
 }
 
 // this is to check the value of the cards on the table
-let allowSnatch = "";
+let allowSnatch = "no";
 function checkTableCardsValue() {
   if (selectedItem == "2") {
     if (player2.tableCards.length == 0) {
@@ -294,8 +293,6 @@ function checkTableCardsValue() {
         player1.tableCards[player1.tableCards.length - 1],
         player2.tableCards[player2.tableCards.length - 1]
       );
-      console.log("currentTableCards")
-      console.log(currentTableCards)
       countValue(currentTableCards);
     }
   }
@@ -489,7 +486,6 @@ function awardCards() {
   if (selectedItem == "2") {
     // if player1 snatched (check key pressed?) and if checkTableCardsValue has a 5
     if (snatchKeyPressed === "z" && allowSnatch === "yes") {
-      console.log("player1 snatch successful");
       player1.hiddenDeck = player1.hiddenDeck.concat(
         player1.tableCards,
         player2.tableCards
@@ -506,7 +502,6 @@ function awardCards() {
     }
     // if player2 snatched and if checkTableCardsValue has a 5
     if (snatchKeyPressed == "/" && allowSnatch == "yes") {
-      console.log("player2 snatch successful");
       player2.hiddenDeck = player2.hiddenDeck.concat(
         player1.tableCards,
         player2.tableCards
@@ -517,14 +512,13 @@ function awardCards() {
     }
     // if player2 snatched and if checkTableCardsValue does not have a 5
     if (snatchKeyPressed == "/" && allowSnatch == "no") {
-      console.log("player2 snatch NOT successful");
       player1.hiddenDeck.push(player2.hiddenDeck.pop());
       shuffleCardDeck(player1.hiddenDeck);
     }
     // wrap the above in their respective "if"s then
     updateScore(player1);
     updateScore(player2);
-    console.log("scores updated");
+    allowSnatch = "no";
   }
   if (selectedItem == "3") {
     // if player1 snatched (check key pressed?) and if checkTableCardsValue has a 5
