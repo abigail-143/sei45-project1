@@ -355,17 +355,18 @@ function checkTableCardsValue() {
 }
 
 // this is to acticate the snatch color //
+let keypressed = ""
 window.addEventListener("keydown", (event) => {
   if (selectedItem == "2") {
     if (event.key == "z") {
       document.getElementById("2p-p1-snatch").classList.add("snatch");
       checkTableCardsValue();
-      return event.key;
+      keypressed = "z"
     }
     if (event.key == "/") {
       document.getElementById("2p-p2-snatch").classList.add("snatch");
       checkTableCardsValue();
-      return event.key;
+      keypressed = "/"
     }
   }
   if (selectedItem == "3") {
