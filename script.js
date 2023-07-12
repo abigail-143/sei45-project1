@@ -287,6 +287,10 @@ function checkTableCardsValue() {
       // to catch when only player1 has open card but not player2 //
       let currentTableCards = [player1.tableCards[0]];
       countValue(currentTableCards);
+    }
+    if (player1.tableCards.length == 0) {
+      let currentTableCards = [player2.tableCards[0]];
+      countValue(currentTableCards);
     } else {
       let currentTableCards = [];
       currentTableCards.push(
@@ -300,14 +304,40 @@ function checkTableCardsValue() {
     if (player2.tableCards.length == 0 && player3.tableCards.length == 0) {
       let currentTableCards = [player1.tableCards[0]];
       countValue(currentTableCards);
-    } else if (
+    }
+    if (player1.tableCards.length == 0 && player3.tableCards.length == 0) {
+      let currentTableCards = [player2.tableCards[0]];
+      countValue(currentTableCards);
+    }
+    if (player1.tableCards.length == 0 && player2.tableCards.length == 0) {
+      let currentTableCards = [player3.tableCards[0]];
+      countValue(currentTableCards);
+    }
+    if (
+      player1.tableCards.length == 0 &&
+      player2.tableCards.length != 0 &&
+      player3.tableCards.length != 0
+    ) {
+      let currentTableCards = [player2.tableCards[0], player3.tableCards[0]];
+      countValue(currentTableCards);
+    } 
+    if (
       player1.tableCards.length != 0 &&
       player2.tableCards.length != 0 &&
       player3.tableCards.length == 0
     ) {
       let currentTableCards = [player1.tableCards[0], player2.tableCards[0]];
       countValue(currentTableCards);
-    } else {
+    }
+    if (
+      player1.tableCards.length != 0 &&
+      player2.tableCards.length == 0 &&
+      player3.tableCards.length != 0
+    ) {
+      let currentTableCards = [player1.tableCards[0], player3.tableCards[0]];
+      countValue(currentTableCards);
+    }
+    else {
       let currentTableCards = [];
       currentTableCards.push(
         player1.tableCards[player1.tableCards.length - 1],
@@ -475,13 +505,6 @@ window.addEventListener("keydown", (event) => {
   }
 });
 
-// startGame(num of players)
-//
-
-// while (playing_game) {
-
-// }
-
 function awardCards() {
   if (selectedItem == "2") {
     // if player1 snatched (check key pressed?) and if checkTableCardsValue has a 5
@@ -493,6 +516,8 @@ function awardCards() {
       shuffleCardDeck(player1.hiddenDeck);
       player1.tableCards = [];
       player2.tableCards = [];
+      document.getElementById("2p-p1-opencard").src = "./cards/card.png";
+      document.getElementById("2p-p2-opencard").src = "./cards/card.png";
     }
     // if player1 snatched and if checkTableCardsValue does not have a 5
     if (snatchKeyPressed == "z" && allowSnatch == "no") {
@@ -509,6 +534,8 @@ function awardCards() {
       shuffleCardDeck(player2.hiddenDeck);
       player1.tableCards = [];
       player2.tableCards = [];
+      document.getElementById("2p-p1-opencard").src = "./cards/card.png";
+      document.getElementById("2p-p2-opencard").src = "./cards/card.png";
     }
     // if player2 snatched and if checkTableCardsValue does not have a 5
     if (snatchKeyPressed == "/" && allowSnatch == "no") {
@@ -519,6 +546,10 @@ function awardCards() {
     updateScore(player1);
     updateScore(player2);
     allowSnatch = "no";
+    setTimeout(() => {
+      document.getElementById("2p-p1-snatch").classList.remove("snatch");
+      document.getElementById("2p-p2-snatch").classList.remove("snatch");
+    }, 200);
   }
   if (selectedItem == "3") {
     // if player1 snatched (check key pressed?) and if checkTableCardsValue has a 5
