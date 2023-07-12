@@ -370,7 +370,9 @@ function checkTableCardsValue() {
       player3.tableCards.length == 0 &&
       player4.tableCards.length == 0
     ) {
-      let currentTableCards = [player1.tableCards[0]];
+      let currentTableCards = [
+        player1.tableCards[player1.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
       console.log("currentTableCards");
       console.log(currentTableCards);
@@ -381,7 +383,9 @@ function checkTableCardsValue() {
       player3.tableCards.length == 0 &&
       player4.tableCards.length == 0
     ) {
-      let currentTableCards = [player2.tableCards[0]];
+      let currentTableCards = [
+        player2.tableCards[player2.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
       console.log("currentTableCards");
       console.log(currentTableCards);
@@ -392,7 +396,9 @@ function checkTableCardsValue() {
       player3.tableCards.length != 0 &&
       player4.tableCards.length == 0
     ) {
-      let currentTableCards = [player3.tableCards[0]];
+      let currentTableCards = [
+        player3.tableCards[player3.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
       console.log("currentTableCards");
       console.log(currentTableCards);
@@ -403,7 +409,9 @@ function checkTableCardsValue() {
       player3.tableCards.length == 0 &&
       player4.tableCards.length != 0
     ) {
-      let currentTableCards = [player4.tableCards[0]];
+      let currentTableCards = [
+        player4.tableCards[player4.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
       console.log("currentTableCards");
       console.log(currentTableCards);
@@ -414,7 +422,10 @@ function checkTableCardsValue() {
       player3.tableCards.length == 0 &&
       player4.tableCards.length == 0
     ) {
-      let currentTableCards = [player1.tableCards[0], player2.tableCards[0]];
+      let currentTableCards = [
+        player1.tableCards[player1.tableCards.length - 1],
+        player2.tableCards[player2.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
       console.log("currentTableCards");
       console.log(currentTableCards);
@@ -425,7 +436,10 @@ function checkTableCardsValue() {
       player3.tableCards.length != 0 &&
       player4.tableCards.length == 0
     ) {
-      let currentTableCards = [player2.tableCards[0], player3.tableCards[0]];
+      let currentTableCards = [
+        player2.tableCards[player2.tableCards.length - 1],
+        player3.tableCards[player3.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
       console.log("currentTableCards");
       console.log(currentTableCards);
@@ -436,7 +450,10 @@ function checkTableCardsValue() {
       player3.tableCards.length != 0 &&
       player4.tableCards.length != 0
     ) {
-      let currentTableCards = [player3.tableCards[0], player4.tableCards[0]];
+      let currentTableCards = [
+        player3.tableCards[player3.tableCards.length - 1],
+        player4.tableCards[player4.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
       console.log("currentTableCards");
       console.log(currentTableCards);
@@ -447,7 +464,10 @@ function checkTableCardsValue() {
       player3.tableCards.length != 0 &&
       player4.tableCards.length == 0
     ) {
-      let currentTableCards = [player1.tableCards[0], player3.tableCards[0]];
+      let currentTableCards = [
+        player1.tableCards[player4.tableCards.length - 1],
+        player3.tableCards[player3.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
       console.log("currentTableCards");
       console.log(currentTableCards);
@@ -458,7 +478,10 @@ function checkTableCardsValue() {
       player3.tableCards.length == 0 &&
       player4.tableCards.length != 0
     ) {
-      let currentTableCards = [player1.tableCards[0], player4.tableCards[0]];
+      let currentTableCards = [
+        player1.tableCards[player1.tableCards.length - 1],
+        player4.tableCards[player4.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
       console.log("currentTableCards");
       console.log(currentTableCards);
@@ -469,7 +492,10 @@ function checkTableCardsValue() {
       player3.tableCards.length == 0 &&
       player4.tableCards.length != 0
     ) {
-      let currentTableCards = [player2.tableCards[0], player4.tableCards[0]];
+      let currentTableCards = [
+        player2.tableCards[player2.tableCards.length - 1],
+        player4.tableCards[player4.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
       console.log("currentTableCards");
       console.log(currentTableCards);
@@ -482,9 +508,9 @@ function checkTableCardsValue() {
       player4.tableCards.length == 0
     ) {
       let currentTableCards = [
-        player1.tableCards[0],
-        player2.tableCards[0],
-        player3.tableCards[0],
+        player1.tableCards[player1.tableCards.length - 1],
+        player2.tableCards[player2.tableCards.length - 1],
+        player3.tableCards[player3.tableCards.length - 1],
       ];
       countValue(currentTableCards);
       console.log("currentTableCards");
@@ -497,9 +523,9 @@ function checkTableCardsValue() {
       player4.tableCards.length != 0
     ) {
       let currentTableCards = [
-        player1.tableCards[0],
-        player2.tableCards[0],
-        player4.tableCards[0],
+        player1.tableCards[player1.tableCards.length - 1],
+        player2.tableCards[player2.tableCards.length - 1],
+        player4.tableCards[player4.tableCards.length - 1],
       ];
       countValue(currentTableCards);
       console.log("currentTableCards");
@@ -512,9 +538,9 @@ function checkTableCardsValue() {
       player4.tableCards.length != 0
     ) {
       let currentTableCards = [
-        player1.tableCards[0],
-        player3.tableCards[0],
-        player4.tableCards[0],
+        player1.tableCards[player1.tableCards.length - 1],
+        player3.tableCards[player3.tableCards.length - 1],
+        player4.tableCards[player4.tableCards.length - 1],
       ];
       countValue(currentTableCards);
       console.log("currentTableCards");
@@ -527,9 +553,9 @@ function checkTableCardsValue() {
       player4.tableCards.length != 0
     ) {
       let currentTableCards = [
-        player2.tableCards[0],
-        player3.tableCards[0],
-        player4.tableCards[0],
+        player2.tableCards[player2.tableCards.length - 1],
+        player3.tableCards[player3.tableCards.length - 1],
+        player4.tableCards[player4.tableCards.length - 1],
       ];
       countValue(currentTableCards);
       console.log("currentTableCards");
