@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Halli Galli</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto+Mono:ital,wght@0,400;1,600&family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,15 +19,14 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    
     <main>
-      <img src="./halli-galli-3.gif" id="selector" class="hide">
+      <!-- <img src="./halli-galli.gif" id="selector" class="hide"> -->
       <!-- Start Page -->
       <div id="starting-page" class="container-fluid gx-0">
         <div class="row justify-content-center">
           <div class="row justify-content-center gx-0">
-            <div class="game-title text-center">
-              <h1>Halli Galli</h1>
+            <div class="game-title text-center mx-0">
+              <h1 id="game-name">Halli Galli</h1>
             </div>
           </div>
           <div class="row justify-content-center gx-0">
@@ -35,19 +40,21 @@
                 will not be made known to the players.
               </p>
               <p>
-                Each player will take turn opening a card from their closed deck. As each player reveals her next card, the
-                instant you see a total of five of one kind of fruit on the
-                table, hit the bell (snatch the cards).</p>
-                <p>If you're correct, you pick up all the
-                played cards and put them into your deck; if you're wrong, you
-                pay the other players one card each. When you run out of cards,
-                you're out.
+                Each player will take turn opening a card from their closed
+                deck. As each player reveals her next card, the instant you see
+                a total of five of one kind of fruit on the table, hit the bell
+                (snatch the cards).
+              </p>
+              <p>
+                If you're correct, you pick up all the played cards and put them
+                into your deck; if you're wrong, you pay the other players one
+                card each. When you run out of cards, you're out.
               </p>
             </div>
           </div>
           <div class="row justify-content-center gx-0">
-            <div class="dropdown text-center">
-              <select id="numberOfPlayersOptions">
+            <div class="dropdown text-center pt-3">
+              <select id="numberOfPlayersOptions" class="px-2 py-2">
                 <option>Number of Players</option>
                 <option value="2">2 Players</option>
                 <option value="3">3 Players</option>
@@ -56,7 +63,7 @@
             </div>
             <div
               id="players-name"
-              class="row div6 justify-content-evenly gx-0 mt-3"
+              class="row div6-1 justify-content-evenly gx-0 mt-3 pt-3"
             >
               <div id="player1-name-container" class="col-2 gx-0 hide">
                 <input
@@ -97,7 +104,7 @@
             </div>
             <div class="row justify-content-center gx-0">
               <div class="col-4 text-center">
-                <button class="start-game btn btn-secondary">start game</button>
+                <button class="start-game btn btn-lg p-2">start game</button>
               </div>
             </div>
           </div>
@@ -123,21 +130,25 @@
               />
             </div>
             <div class="col-3 div5 justify-content-center">
-              <div class="row div5-1" style="border: 3px solid grey">
+              <div class="row div5-1">
                 <div class="div7 gx-0">
-                  <p>Player 1: <span id="2p-p1-name"></span></p>
-                </div>
-                <div class="div7 gx-0">
-                  <p>Score: <span id="2p-p1-score"></span></p>
-                </div>
-                <div
-                  class="col div7 gx-0 text-center my-auto"
-                  style="background-color: beige"
-                >
-                  <p id="2p-p1-snatch" class="">SNATCH</p>
-                  <p class="user-instructions">
-                    "Z" to Snatch, "X" to Open Card
+                  <p class="in-game-paragraph">
+                    Player 1: <span id="2p-p1-name"></span>
                   </p>
+                </div>
+                <div class="div7 gx-0">
+                  <p class="in-game-paragraph">
+                    Score: <span id="2p-p1-score"></span>
+                  </p>
+                </div>
+
+                <div class="col gx-0">
+                  <div class="col div7-1 gx-0 text-center my-auto">
+                    <p id="2p-p1-snatch" class="in-game-paragraph">SNATCH</p>
+                    <p class="user-instructions in-game-paragraph">
+                      "Z" to Snatch, "X" to Open Card
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -150,7 +161,7 @@
             <div class="col-3 div5 justify-content-center">
               <div class="row align-items-center">
                 <div class="col justify-content-center">
-                  <p id="2p-winner-1">HUEHUEHUEHUEHUE</p>
+                  <p id="2p-winner-1" class="in-game-paragraph"></p>
                 </div>
               </div>
             </div>
@@ -163,13 +174,13 @@
             <div class="col-3 div5 justify-content-center">
               <div class="row align-items-center">
                 <div class="col justify-content-center">
-                  <p id="2p-winner-2">HUEHUEHUEHUEHUE</p>
+                  <p id="2p-winner-2" class="in-game-paragraph"></p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="row div2 gx-0 align-items-center">
+          <div class="row div2 gx-0 align-items-center" id="2p-p2-row">
             <div class="col-3 div3 justify-content-center">
               <img
                 id="2p-p2-hiddencard"
@@ -185,21 +196,24 @@
               />
             </div>
             <div class="col-3 div5 justify-content-center">
-              <div class="row div5-1" style="border: 3px solid grey">
+              <div class="row div5-1">
                 <div class="div7 gx-0">
-                  <p>Player 2: <span id="2p-p2-name"></span></p>
-                </div>
-                <div class="div7 gx-0">
-                  <p>Score: <span id="2p-p2-score"></span></p>
-                </div>
-                <div
-                  class="div7 gx-0 text-center"
-                  style="background-color: beige"
-                >
-                  <p id="2p-p2-snatch" class="">SNATCH</p>
-                  <p class="user-instructions">
-                    "/" to Snatch, "." to Open Card
+                  <p class="in-game-paragraph">
+                    Player 2: <span id="2p-p2-name"></span>
                   </p>
+                </div>
+                <div class="div7 gx-0">
+                  <p class="in-game-paragraph">
+                    Score: <span id="2p-p2-score"></span>
+                  </p>
+                </div>
+                <div class="col gx-0">
+                  <div class="div7-1 gx-0 text-center">
+                    <p id="2p-p2-snatch" class="in-game-paragraph">SNATCH</p>
+                    <p class="user-instructions in-game-paragraph">
+                      "/" to Snatch, "." to Open Card
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -216,19 +230,24 @@
                 <div class="col-3 div5 justify-content-center">
                   <div class="row div5-1">
                     <div class="div7 gx-0">
-                      <p>Player 1: <span id="3p-p1-name"></span></p>
+                      <p class="in-game-paragraph">
+                        Player 1: <span id="3p-p1-name">name</span>
+                      </p>
                     </div>
                     <div class="div7 gx-0">
-                      <p>Score: <span id="3p-p1-score"></span></p>
-                    </div>
-                    <div
-                      class="div7 gx-0 text-center"
-                      style="background-color: beige"
-                    >
-                      <p id="3p-p1-snatch" class="">SNATCH</p>
-                      <p class="user-instructions">
-                        "Q" to Snatch, "W" to Open Card
+                      <p class="in-game-paragraph">
+                        Score: <span id="3p-p1-score"></span>
                       </p>
+                    </div>
+                    <div class="col gx-0">
+                      <div class="div7-1 gx-0 text-center">
+                        <p id="3p-p1-snatch" class="in-game-paragraph">
+                          SNATCH
+                        </p>
+                        <p class="user-instructions in-game-paragraph">
+                          "Q" to Snatch, "W" to Open Card
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -267,19 +286,24 @@
                 <div class="col-3 div5 justify-content-center">
                   <div class="row div5-1">
                     <div class="div7 gx-0">
-                      <p>Player 2: <span id="3p-p2-name"></span></p>
+                      <p class="in-game-paragraph">
+                        Player 2: <span id="3p-p2-name"></span>
+                      </p>
                     </div>
                     <div class="div7 gx-0">
-                      <p>Score: <span id="3p-p2-score"></span></p>
-                    </div>
-                    <div
-                      class="div7 gx-0 text-center"
-                      style="background-color: beige"
-                    >
-                      <p id="3p-p2-snatch" class="">SNATCH</p>
-                      <p class="user-instructions">
-                        "P" to Snatch, "O" to Open Card
+                      <p class="in-game-paragraph">
+                        Score: <span id="3p-p2-score"></span>
                       </p>
+                    </div>
+                    <div class="col gx-0">
+                      <div class="div7-1 gx-0 text-center">
+                        <p id="3p-p2-snatch" class="in-game-paragraph">
+                          SNATCH
+                        </p>
+                        <p class="user-instructions in-game-paragraph">
+                          "P" to Snatch, "O" to Open Card
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -294,7 +318,7 @@
             <div class="col-3 div5 justify-content-center">
               <div class="row align-items-center">
                 <div class="col justify-content-center">
-                  <p id="3p-winner-1">HUEHUEHUEHUEHUE</p>
+                  <p id="3p-winner-1" class="in-game-paragraph"></p>
                 </div>
               </div>
             </div>
@@ -307,7 +331,7 @@
             <div class="col-3 div5 justify-content-center">
               <div class="row align-items-center">
                 <div class="col justify-content-center">
-                  <p id="3p-winner-2">HUEHUEHUEHUEHUE</p>
+                  <p id="3p-winner-2" class="in-game-paragraph"></p>
                 </div>
               </div>
             </div>
@@ -334,16 +358,22 @@
             <div class="col-3 div5 justify-content-center">
               <div class="row div5-1">
                 <div class="div7 gx-0">
-                  <p>Player 3: <span id="3p-p3-name"></span></p>
+                  <p class="in-game-paragraph">
+                    Player 3: <span id="3p-p3-name"></span>
+                  </p>
                 </div>
                 <div class="div7 gx-0">
-                  <p>Score: <span id="3p-p3-score"></span></p>
-                </div>
-                <div class="div7 gx-0 text-center">
-                  <p id="3p-p3-snatch" class="">SNATCH</p>
-                  <p class="user-instructions">
-                    "/" to Snatch, "." to Open Card
+                  <p class="in-game-paragraph">
+                    Score: <span id="3p-p3-score"></span>
                   </p>
+                </div>
+                <div class="col gx-0">
+                  <div class="div7-1 gx-0 text-center">
+                    <p id="3p-p3-snatch" class="in-game-paragraph">SNATCH</p>
+                    <p class="user-instructions in-game-paragraph">
+                      "/" to Snatch, "." to Open Card
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -360,16 +390,24 @@
                 <div class="col-3 div5 justify-content-center">
                   <div class="row div5-1">
                     <div class="div7 gx-0">
-                      <p>Player 1: <span id="4p-p1-name"></span></p>
+                      <p class="in-game-paragraph">
+                        Player 1: <span id="4p-p1-name"></span>
+                      </p>
                     </div>
                     <div class="div7 gx-0">
-                      <p>Score: <span id="4p-p1-score"></span></p>
-                    </div>
-                    <div class="div7 gx-0 text-center">
-                      <p id="4p-p1-snatch" class="">SNATCH</p>
-                      <p class="user-instructions">
-                        "Q" to Snatch, "W" to Open Card
+                      <p class="in-game-paragraph">
+                        Score: <span id="4p-p1-score"></span>
                       </p>
+                    </div>
+                    <div class="col gx-0">
+                      <div class="div7-1 gx-0 text-center">
+                        <p id="4p-p1-snatch" class="in-game-paragraph">
+                          SNATCH
+                        </p>
+                        <p class="user-instructions in-game-paragraph">
+                          "Q" to Snatch, "W" to Open Card
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -408,16 +446,24 @@
                 <div class="col-3 div5 justify-content-center">
                   <div class="row div5-1">
                     <div class="div7 gx-0">
-                      <p>Player 2: <span id="4p-p2-name"></span></p>
+                      <p class="in-game-paragraph">
+                        Player 2: <span id="4p-p2-name"></span>
+                      </p>
                     </div>
                     <div class="div7 gx-0">
-                      <p>Score: <span id="4p-p2-score"></span></p>
-                    </div>
-                    <div class="div7 gx-0 text-center">
-                      <p id="4p-p2-snatch" class="">SNATCH</p>
-                      <p class="user-instructions">
-                        "P" to Snatch, "O" to Open Card
+                      <p class="in-game-paragraph">
+                        Score: <span id="4p-p2-score"></span>
                       </p>
+                    </div>
+                    <div class="col gx-0">
+                      <div class="div7-1 gx-0 text-center">
+                        <p id="4p-p2-snatch" class="in-game-paragraph">
+                          SNATCH
+                        </p>
+                        <p class="user-instructions in-game-paragraph">
+                          "P" to Snatch, "O" to Open Card
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -432,7 +478,7 @@
             <div class="col-3 div5 justify-content-center">
               <div class="row align-items-center">
                 <div class="col justify-content-center">
-                  <p id="4p-winner-1">HUEHUEHUEHUEHUE</p>
+                  <p id="4p-winner-1" class="in-game-paragraph"></p>
                 </div>
               </div>
             </div>
@@ -445,7 +491,7 @@
             <div class="col-3 div5 justify-content-center">
               <div class="row align-items-center">
                 <div class="col justify-content-center">
-                  <p id="4p-winner-2">HUEHUEHUEHUEHUE</p>
+                  <p id="4p-winner-2" class="in-game-paragraph"></p>
                 </div>
               </div>
             </div>
@@ -457,16 +503,24 @@
                 <div class="col-3 div5 justify-content-center">
                   <div class="row div5-1">
                     <div class="div7 gx-0">
-                      <p>Player 4:<span id="4p-p4-name"></span></p>
+                      <p class="in-game-paragraph">
+                        Player 4:<span id="4p-p4-name"></span>
+                      </p>
                     </div>
                     <div class="div7 gx-0">
-                      <p>Score: <span id="4p-p4-score"></span></p>
-                    </div>
-                    <div class="div7 gx-0 text-center">
-                      <p id="4p-p4-snatch" class="">SNATCH</p>
-                      <p class="user-instructions">
-                        "Z" to Snatch, "X" to Open Card
+                      <p class="in-game-paragraph">
+                        Score: <span id="4p-p4-score"></span>
                       </p>
+                    </div>
+                    <div class="col gx-0">
+                      <div class="div7-1 gx-0 text-center">
+                        <p id="4p-p4-snatch" class="in-game-paragraph">
+                          SNATCH
+                        </p>
+                        <p class="user-instructions in-game-paragraph">
+                          "Z" to Snatch, "X" to Open Card
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -505,16 +559,24 @@
                 <div class="col-3 div5 justify-content-center">
                   <div class="row div5-1">
                     <div class="div7 gx-0">
-                      <p>Player 3: <span id="4p-p3-name"></span></p>
+                      <p class="in-game-paragraph">
+                        Player 3: <span id="4p-p3-name"></span>
+                      </p>
                     </div>
                     <div class="div7 gx-0">
-                      <p>Score: <span id="4p-p3-score"></span></p>
-                    </div>
-                    <div class="div7 gx-0 text-center">
-                      <p id="4p-p3-snatch" class="">SNATCH</p>
-                      <p class="user-instructions">
-                        "/" to Snatch, "." to Open Card
+                      <p class="in-game-paragraph">
+                        Score: <span id="4p-p3-score"></span>
                       </p>
+                    </div>
+                    <div class="col gx-0">
+                      <div class="div7-1 gx-0 text-center">
+                        <p id="4p-p3-snatch" class="in-game-paragraph">
+                          SNATCH
+                        </p>
+                        <p class="user-instructions in-game-paragraph">
+                          "/" to Snatch, "." to Open Card
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>

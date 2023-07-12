@@ -13,60 +13,99 @@
   height: 100%;
 }
 
+main {
+  background-color: rgba(246, 246, 246, 1);
+}
+
 #starting-page {
-  border: 3px solid black;
+  /* border: 3px solid black; */
   width: 99vw;
   height: 99vh;
   padding-top: 10%;
-  background-image:url('./halli-galli-3.gif');
-  background-attachment: fixed;
-  background-repeat: repeat;
-  
+  /* background-image:url('./halli-galli.gif');
+  background-attachment: fixed; */
+}
+
+#game-name {
+  font-size: 5rem;
+  font-family: 'Shrikhand', cursive;
+  color: rgba(148, 185, 255, 1);
+}
+
+.game-title {
+  background-color: rgba(205, 255, 216, 0.9);
+  width: 50vh;
+  padding-top: 8px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .game-writeup {
   padding: 10px;
   margin: 10px 0;
-  border: 3px solid green;
-  width: 50%;
+  /* border: 3px solid green; */
+  width: 65%;
+  background-color: rgba(148, 185, 255, 0.9);
+  color: rgba(205, 255, 216, 1);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.1rem;
+}
+
+#numberOfPlayersOptions {
+  background-color: rgba(205, 255, 216, 1);
+  border-color: transparent;
+  color: rgba(148, 185, 255, 0.9);
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+}
+
+.form-control {
+  background-color: rgba(205, 255, 216, 1);
+  border-color: rgba(148, 185, 255, 0.9);
+  color: rgba(148, 185, 255, 1);
+  font-family: 'Roboto Mono', monospace;
+  width: 120%;
 }
 
 .start-game {
   padding: 5px;
   margin: 10px 0;
+  background-color: rgba(148, 185, 255, 0.9);
+  color: rgba(205, 255, 216, 1);
+  font-family: 'Shrikhand', cursive;
 }
 
 .div0 {
-  border: 3px solid green;
+  /* border: 3px solid green; */
   height: 20px;
 }
 
 .div1 {
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
   height: 100vh;
   width: 99vw;
 }
 
 .div1-1 {
-  border: 3px solid greenyellow;
+  /* border: 3px solid greenyellow; */
   height: 100vh;
-  width: 85vw;
+  width: 60vw;
 }
 
 .div1-2 {
-  border: 3px solid black;
+  /* border: 3px solid black; */
   height: 100%;
   width: 100%;
 }
 
 .div1-3 {
-  border: 3px solid fuchsia;
+  /* border: 3px solid fuchsia; */
   height: 70vh;
   width: 80vw;
 }
 
 .div2 {
-  border: 3px solid pink;
+  /* border: 3px solid pink; */
   height: 30vh;
 }
 
@@ -75,21 +114,21 @@
 }
 
 .div3 {
-  border: 3px solid goldenrod;
+  /* border: 3px solid goldenrod; */
   width: 25%;
   height: 100%;
   display: flex;
 }
 
 .div4 {
-  border: 3px solid greenyellow;
+  /* border: 3px solid greenyellow; */
   width: 50%;
   height: 100%;
   display: flex;
 }
 
 .div5 {
-  border: 3px solid rosybrown;
+  /* border: 3px solid rosybrown; */
   width: 25%;
   height: 80%;
   display: flex;
@@ -101,14 +140,25 @@
 }
 
 .div6 {
-  border: 3px solid sandybrown;
+  /* border: 3px solid sandybrown; */
   width: 50%;
   height: auto;
 }
 
+.div6-1 {
+  width: 50%;
+  height: auto;
+  margin-bottom: 18px;
+}
+
 .div7 {
   width: 100%;
-  height: 30%;
+  height: 25%;
+}
+
+.div7-1 {
+  width: 100%;
+  height: 50%
 }
 
 img {
@@ -120,7 +170,7 @@ img {
 }
 
 #players-name > div > input {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 
 p {
@@ -130,7 +180,9 @@ p {
 .snatch {
   /* background-color: aquamarine; */
   color: red;
-  font-weight: 300;
+  font-weight: bold;
+  font-size: 1.4rem;
+  font-style: italic;
 }
 
 #players-3-lastrow {
@@ -138,5 +190,10 @@ p {
 }
 
 .user-instructions {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
+}
+
+.in-game-paragraph {
+  font-family: 'Roboto Mono', monospace;
+  margin: 5px;
 }
