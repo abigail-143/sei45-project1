@@ -58,28 +58,6 @@ const cardDeck = [
   { food: "ramen", value: 5, image: "./cards/ramen5.png" },
 ];
 
-// document.addEventListener("click", function (e) {
-//   console.log(e.target.textContent);
-// });
-// let clicked = document.addEventListener("click", function (e) {
-//   e.target.textContent;
-// });
-// document
-//   .getElementById("NumberOfPlayers")
-//   .addEventListener("click", function (e) {
-//     console.log(e.target.textContent);
-//     document.getElementById("NumberOfPlayers").textContent =
-//       document.getElementsByClassName("dropdown-item").target.textContent;
-//   });
-
-// let numberOfPlayersButton = document.getElementById("NumberOfPlayers");
-// let dropdownItems = document.querySelectorAll(".dropdown-item");
-// dropdownItems.forEach(function (eachSelector) {
-//   eachSelector.addEventListener("click", function (e) {
-//     numberOfPlayersButton.innerText = e.target.innerText;
-//   });
-// });
-
 const player1 = {
   name: "",
   tableCards: [],
@@ -104,14 +82,9 @@ const player4 = {
   hiddenDeck: [],
 };
 
-const tableDeckCards = {
-  player1: [],
-  player2: [],
-  player3: [],
-  player4: [],
-};
-
 let selectedItem = 0;
+let allowSnatch = "no";
+let snatchKeyPressed = "";
 
 // this will just unhide the number of players fields required.
 function getPlayerName(event) {
@@ -145,10 +118,6 @@ function updatePlayersName() {
 
   player2.tableCards = [];
 }
-// let nameInput = document.querySelectorAll(".form-control");
-// nameInput.forEach(function (eachInput) {
-//   eachInput.addEventListener("input", updatePlayersName);
-// }); // this works?
 
 // this will start the game and set up the player's name and player's initial score (which should be 14 each)
 function hideStartPage() {
@@ -182,7 +151,6 @@ function hideStartPage() {
     document.getElementById("4p-p4-score").innerText = player4.score;
   }
 }
-
 document
   .querySelector(".start-game")
   .addEventListener("click", distributeCardDeckToPlayers); // this works
@@ -192,6 +160,7 @@ document
   .addEventListener("click", updatePlayersName);
 document.querySelector(".start-game").addEventListener("click", hideStartPage); // this works
 
+// this will get the distributed card deck (from distributeCardDeck function) to each player
 function distributeCardDeckToPlayers() {
   shuffleCardDeck(cardDeck);
   let returned = distributeCardDeck(cardDeck);
@@ -205,6 +174,7 @@ function distributeCardDeckToPlayers() {
   updateScore(player4);
 }
 
+// this will shuffle the "cards" in an array. need to input the array name
 function shuffleCardDeck(array) {
   let currentIndex = array.length,
     randomIndex;
@@ -220,6 +190,7 @@ function shuffleCardDeck(array) {
   return array;
 }
 
+// will distribute the initial 14 cards to each player. if there's only 2 players, total cards in the playing arena is 28. if there's only 3 players, total cards in the playing area is 42
 function distributeCardDeck() {
   const chunkSize = 14;
   let splitCardDeck = [];
@@ -230,6 +201,7 @@ function distributeCardDeck() {
   return splitCardDeck;
 }
 
+// updates player's score as well as score shown on the screen
 function updateScore(user) {
   user.score = user.hiddenDeck.length;
   if (selectedItem == "2") {
@@ -249,11 +221,12 @@ function updateScore(user) {
   }
 }
 
+// this lets each user open a card from their hidden deck using a specific key on the keyboard. the "opened card" will be pushed to player's tableCards array
 function openCard(user) {
   user.tableCards.push(user.hiddenDeck.pop());
 }
 
-// this function is used in checkTableCardsValue() //
+// this function is used in checkTableCardsValue(), will return the "allowSnatch" value
 function countValue(array) {
   let counts = array.reduce((prev, curr) => {
     let count = prev.get(curr.food) || 0;
@@ -279,17 +252,20 @@ function countValue(array) {
   }
 }
 
-// this is to check the value of the cards on the table
-let allowSnatch = "no";
+// this is to check the value of the cards on the table (the other function called in this function will return the "allowSnatch" value)
 function checkTableCardsValue() {
   if (selectedItem == "2") {
     if (player2.tableCards.length == 0 && player1.tableCards.length != 0) {
       // to catch when only player1 has open card but not player2 //
-      let currentTableCards = [player1.tableCards[player1.tableCards.length - 1]];
+      let currentTableCards = [
+        player1.tableCards[player1.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
     }
     if (player2.tableCards.length != 0 && player1.tableCards.length == 0) {
-      let currentTableCards = [player2.tableCards[player2.tableCards.length - 1]];
+      let currentTableCards = [
+        player2.tableCards[player2.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
     } else {
       let currentTableCards = [];
@@ -306,7 +282,9 @@ function checkTableCardsValue() {
       player3.tableCards.length == 0 &&
       player1.tableCards.length != 0
     ) {
-      let currentTableCards = [player1.tableCards[player1.tableCards.length - 1]];
+      let currentTableCards = [
+        player1.tableCards[player1.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
     }
     if (
@@ -314,7 +292,9 @@ function checkTableCardsValue() {
       player3.tableCards.length == 0 &&
       player2.tableCards.length != 0
     ) {
-      let currentTableCards = [player2.tableCards[player2.tableCards.length - 1]];
+      let currentTableCards = [
+        player2.tableCards[player2.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
     }
     if (
@@ -322,7 +302,9 @@ function checkTableCardsValue() {
       player2.tableCards.length == 0 &&
       player3.tableCards.length != 0
     ) {
-      let currentTableCards = [player3.tableCards[player3.tableCards.length - 1]];
+      let currentTableCards = [
+        player3.tableCards[player3.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
     }
     if (
@@ -330,7 +312,10 @@ function checkTableCardsValue() {
       player2.tableCards.length != 0 &&
       player3.tableCards.length != 0
     ) {
-      let currentTableCards = [player2.tableCards[player2.tableCards.length - 1], player3.tableCards[player3.tableCards.length - 1]];
+      let currentTableCards = [
+        player2.tableCards[player2.tableCards.length - 1],
+        player3.tableCards[player3.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
     }
     if (
@@ -338,7 +323,10 @@ function checkTableCardsValue() {
       player2.tableCards.length != 0 &&
       player3.tableCards.length == 0
     ) {
-      let currentTableCards = [player1.tableCards[player1.tableCards.length - 1], player2.tableCards[player2.tableCards.length - 1]];
+      let currentTableCards = [
+        player1.tableCards[player1.tableCards.length - 1],
+        player2.tableCards[player2.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
     }
     if (
@@ -346,7 +334,10 @@ function checkTableCardsValue() {
       player2.tableCards.length == 0 &&
       player3.tableCards.length != 0
     ) {
-      let currentTableCards = [player1.tableCards[player1.tableCards.length - 1], player3.tableCards[player3.tableCards.length - 1]];
+      let currentTableCards = [
+        player1.tableCards[player1.tableCards.length - 1],
+        player3.tableCards[player3.tableCards.length - 1],
+      ];
       countValue(currentTableCards);
     }
     if (
@@ -581,8 +572,7 @@ function checkTableCardsValue() {
   }
 }
 
-// this is to acticate the snatch color //
-let snatchKeyPressed = "";
+// this is to acticate the snatch color which will trigger checkTableCardsValue function and awardCards function
 window.addEventListener("keydown", (event) => {
   if (selectedItem == "2") {
     if (event.key == "z") {
@@ -646,7 +636,7 @@ window.addEventListener("keydown", (event) => {
   }
 });
 
-// this is to open the card //
+// this is to open the card, it will change the "open card" image on the screen as well
 window.addEventListener("keydown", (event) => {
   if (selectedItem == "2") {
     if (event.key == "x") {
@@ -719,6 +709,10 @@ window.addEventListener("keydown", (event) => {
   }
 });
 
+// this will check which player wants to snatch, using the "snatchKeyPressed" value. AND will also check if the snatch should award the player points or deduct points from the player, using the "allowSnatch" value
+// if snatch is successful it will shuffle the hiddenDeck of the player that won the table cards and reset the table cards showing on screen to the default card image
+// if snatch not successful, the player who snatched will lose 1 hiddenDeck card to each player in the game and each player received a hiddenDeck card will have their hiddenDeck cards shuffled
+// after which all players scores are updated, allowSnatch value is returned to "no" and the "snatch" button is reverted to colourless
 function awardCards() {
   if (selectedItem == "2") {
     // if player1 snatched (check key pressed?) and if checkTableCardsValue has a 5

@@ -256,85 +256,24 @@ shuffleCardDeck(player3.hiddenDeck);
 console.log(player3.hiddenDeck);
 console.log(player4.hiddenDeck);
 
-// checkCardValue
-if (selectedItem == "2") {
-  if (player2.tableCards.length == 0) {
-    // to catch when only player1 has open card but not player2 //
-    let currentTableCards = [player1.tableCards[0]];
-    countValue(currentTableCards);
-  }
-  if (player1.tableCards.length == 0) {
-    let currentTableCards = [player2.tableCards[0]];
-    countValue(currentTableCards);
-  } else {
-    let currentTableCards = [];
-    currentTableCards.push(
-      player1.tableCards[player1.tableCards.length - 1],
-      player2.tableCards[player2.tableCards.length - 1]
-    );
-    countValue(currentTableCards);
-  }
-}
+// document.addEventListener("click", function (e) {
+//   console.log(e.target.textContent);
+// });
+// let clicked = document.addEventListener("click", function (e) {
+//   e.target.textContent;
+// });
+// document
+//   .getElementById("NumberOfPlayers")
+//   .addEventListener("click", function (e) {
+//     console.log(e.target.textContent);
+//     document.getElementById("NumberOfPlayers").textContent =
+//       document.getElementsByClassName("dropdown-item").target.textContent;
+//   });
 
-//snatchkeypressed
-if (selectedItem == "2") {
-  if (event.key == "z") {
-    document.getElementById("2p-p1-snatch").classList.add("snatch");
-    snatchKeyPressed = "z";
-    checkTableCardsValue();
-    awardCards();
-  }
-  if (event.key == "/") {
-    document.getElementById("2p-p2-snatch").classList.add("snatch");
-    snatchKeyPressed = "/";
-    checkTableCardsValue();
-    awardCards();
-  }
-}
-
-//awardcards
-if (selectedItem == "2") {
-  // if player1 snatched (check key pressed?) and if checkTableCardsValue has a 5
-  if (snatchKeyPressed === "z" && allowSnatch === "yes") {
-    player1.hiddenDeck = player1.hiddenDeck.concat(
-      player1.tableCards,
-      player2.tableCards
-    );
-    shuffleCardDeck(player1.hiddenDeck);
-    player1.tableCards = [];
-    player2.tableCards = [];
-    document.getElementById("2p-p1-opencard").src = "./cards/card.png";
-    document.getElementById("2p-p2-opencard").src = "./cards/card.png";
-  }
-  // if player1 snatched and if checkTableCardsValue does not have a 5
-  if (snatchKeyPressed == "z" && allowSnatch == "no") {
-    console.log("player1 snatch NOT successful");
-    player2.hiddenDeck.push(player1.hiddenDeck.pop());
-    shuffleCardDeck(player2.hiddenDeck);
-  }
-  // if player2 snatched and if checkTableCardsValue has a 5
-  if (snatchKeyPressed == "/" && allowSnatch == "yes") {
-    player2.hiddenDeck = player2.hiddenDeck.concat(
-      player1.tableCards,
-      player2.tableCards
-    );
-    shuffleCardDeck(player2.hiddenDeck);
-    player1.tableCards = [];
-    player2.tableCards = [];
-    document.getElementById("2p-p1-opencard").src = "./cards/card.png";
-    document.getElementById("2p-p2-opencard").src = "./cards/card.png";
-  }
-  // if player2 snatched and if checkTableCardsValue does not have a 5
-  if (snatchKeyPressed == "/" && allowSnatch == "no") {
-    player1.hiddenDeck.push(player2.hiddenDeck.pop());
-    shuffleCardDeck(player1.hiddenDeck);
-  }
-  // wrap the above in their respective "if"s then
-  updateScore(player1);
-  updateScore(player2);
-  allowSnatch = "no";
-  setTimeout(() => {
-    document.getElementById("2p-p1-snatch").classList.remove("snatch");
-    document.getElementById("2p-p2-snatch").classList.remove("snatch");
-  }, 200);
-}
+// let numberOfPlayersButton = document.getElementById("NumberOfPlayers");
+// let dropdownItems = document.querySelectorAll(".dropdown-item");
+// dropdownItems.forEach(function (eachSelector) {
+//   eachSelector.addEventListener("click", function (e) {
+//     numberOfPlayersButton.innerText = e.target.innerText;
+//   });
+// });
