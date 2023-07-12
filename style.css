@@ -110,7 +110,8 @@ main {
 }
 
 .div2-1 {
-  width: 50%;
+  width: 50vh;
+  height: 30vh;
 }
 
 .div3 {
