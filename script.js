@@ -575,13 +575,13 @@ function checkTableCardsValue() {
 // this is to acticate the snatch color which will trigger checkTableCardsValue function and awardCards function
 window.addEventListener("keydown", (event) => {
   if (selectedItem == "2") {
-    if (event.key == "z") {
+    if (event.key == "z" && player1.score != 0) {
       document.getElementById("2p-p1-snatch").classList.add("snatch");
       snatchKeyPressed = "z";
       checkTableCardsValue();
       awardCards();
     }
-    if (event.key == "/") {
+    if (event.key == "/" && player2.score != 0) {
       document.getElementById("2p-p2-snatch").classList.add("snatch");
       snatchKeyPressed = "/";
       checkTableCardsValue();
@@ -589,19 +589,19 @@ window.addEventListener("keydown", (event) => {
     }
   }
   if (selectedItem == "3") {
-    if (event.key == "q") {
+    if (event.key == "q" && player1.score != 0) {
       document.getElementById("3p-p1-snatch").classList.add("snatch");
       snatchKeyPressed = "q";
       checkTableCardsValue();
       awardCards();
     }
-    if (event.key == "p") {
+    if (event.key == "p" && player2.score != 0) {
       document.getElementById("3p-p2-snatch").classList.add("snatch");
       snatchKeyPressed = "p";
       checkTableCardsValue();
       awardCards();
     }
-    if (event.key == "/") {
+    if (event.key == "/" && player3.score != 0) {
       document.getElementById("3p-p3-snatch").classList.add("snatch");
       snatchKeyPressed = "/";
       checkTableCardsValue();
@@ -639,14 +639,14 @@ window.addEventListener("keydown", (event) => {
 // this is to open the card, it will change the "open card" image on the screen as well
 window.addEventListener("keydown", (event) => {
   if (selectedItem == "2") {
-    if (event.key == "x") {
+    if (event.key == "x" && player1.score != 0) {
       //p1 open card
       openCard(player1);
       updateScore(player1);
       let newCard = player1.tableCards[player1.tableCards.length - 1];
       document.getElementById("2p-p1-opencard").src = newCard.image;
     }
-    if (event.key == ".") {
+    if (event.key == "." && player2.score != 0) {
       //p2 open card
       openCard(player2);
       updateScore(player2);
@@ -656,21 +656,21 @@ window.addEventListener("keydown", (event) => {
     checkForWinner();
   }
   if (selectedItem == "3") {
-    if (event.key == "w") {
+    if (event.key == "w" && player1.score != 0) {
       //p1 open card
       openCard(player1);
       updateScore(player1);
       let newCard = player1.tableCards[player1.tableCards.length - 1];
       document.getElementById("3p-p1-opencard").src = newCard.image;
     }
-    if (event.key == "o") {
+    if (event.key == "o" && player2.score != 0) {
       //p2 open card
       openCard(player2);
       updateScore(player2);
       let newCard = player2.tableCards[player2.tableCards.length - 1];
       document.getElementById("3p-p2-opencard").src = newCard.image;
     }
-    if (event.key == ".") {
+    if (event.key == "." && player3.score != 0) {
       //p3 open card
       openCard(player3);
       updateScore(player3);
