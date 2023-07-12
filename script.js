@@ -653,6 +653,7 @@ window.addEventListener("keydown", (event) => {
       let newCard = player2.tableCards[player2.tableCards.length - 1];
       document.getElementById("2p-p2-opencard").src = newCard.image;
     }
+    checkForWinner();
   }
   if (selectedItem == "3") {
     if (event.key == "w") {
@@ -758,6 +759,7 @@ function awardCards() {
       document.getElementById("2p-p1-snatch").classList.remove("snatch");
       document.getElementById("2p-p2-snatch").classList.remove("snatch");
     }, 200);
+    checkForWinner();
   }
   if (selectedItem == "3") {
     // if player1 snatched (check key pressed?) and if checkTableCardsValue has a 5
@@ -959,5 +961,20 @@ function awardCards() {
       document.getElementById("4p-p3-snatch").classList.remove("snatch");
       document.getElementById("4p-p4-snatch").classList.remove("snatch");
     }, 200);
+  }
+}
+
+function checkForWinner() {
+  if (selectedItem == "2") {
+    if (player1.score == 0 && player2.score != 0) {
+      document.getElementById("winner").innerText = "PLAYER 2 IS THE WINNER"
+    }
+    if (player1.score != 0 && player2.score == 0) {
+      document.getElementById("winner").innerText = "PLAYER 1 IS THE WINNER"
+    }
+  }
+  if (selectedItem == "3") {
+    
+
   }
 }
