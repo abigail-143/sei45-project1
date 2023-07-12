@@ -677,6 +677,7 @@ window.addEventListener("keydown", (event) => {
       let newCard = player3.tableCards[player3.tableCards.length - 1];
       document.getElementById("3p-p3-opencard").src = newCard.image;
     }
+    checkForWinner();
   }
   if (selectedItem == "4") {
     if (event.key == "w") {
@@ -707,6 +708,7 @@ window.addEventListener("keydown", (event) => {
       let newCard = player4.tableCards[player4.tableCards.length - 1];
       document.getElementById("4p-p4-opencard").src = newCard.image;
     }
+    checkForWinner()
   }
 });
 
@@ -838,6 +840,7 @@ function awardCards() {
       document.getElementById("3p-p2-snatch").classList.remove("snatch");
       document.getElementById("3p-p3-snatch").classList.remove("snatch");
     }, 200);
+    checkForWinner()
   }
   if (selectedItem == "4") {
     // if player1 snatch (check key pressed?) and if checkTableCardsValue has a 5
@@ -961,20 +964,42 @@ function awardCards() {
       document.getElementById("4p-p3-snatch").classList.remove("snatch");
       document.getElementById("4p-p4-snatch").classList.remove("snatch");
     }, 200);
+    checkForWinner()
   }
 }
 
 function checkForWinner() {
   if (selectedItem == "2") {
-    if (player1.score == 0 && player2.score != 0) {
-      document.getElementById("winner").innerText = "PLAYER 2 IS THE WINNER"
+    if (player1.score == 0) {
+      document.getElementById("2p-winner").innerText = "PLAYER 2 IS THE WINNER";
     }
-    if (player1.score != 0 && player2.score == 0) {
-      document.getElementById("winner").innerText = "PLAYER 1 IS THE WINNER"
+    if (player2.score == 0) {
+      document.getElementById("2p-winner").innerText = "PLAYER 1 IS THE WINNER";
     }
   }
   if (selectedItem == "3") {
-    
-
+    if (player1.score != 0 && player2.score == 0 && player3.score == 0) {
+      document.getElementById("3p-winner").innerText = "PLAYER 1 IS THE WINNER";
+    }
+    if (player1.score == 0 && player2.score != 0 && player3.score == 0) {
+      document.getElementById("3p-winner").innerText = "PLAYER 2 IS THE WINNER";
+    }
+    if (player1.score == 0 && player2.score == 0 && player3.score != 0) {
+      document.getElementById("3p-winner").innerText = "PLAYER 3 IS THE WINNER";
+    }
+  }
+  if (selectedItem == "4") {
+    if (player1.score != 0 && player2.score == 0 && player3.score == 0 && player4.score == 0) {
+      document.getElementById("4p-winner").innerText = "PLAYER 1 IS THE WINNER";
+    }
+    if (player1.score == 0 && player2.score != 0 && player3.score == 0 && player4.score == 0) {
+      document.getElementById("4p-winner").innerText = "PLAYER 2 IS THE WINNER";
+    }
+    if (player1.score == 0 && player2.score == 0 && player3.score != 0 && player4.score == 0) {
+      document.getElementById("4p-winner").innerText = "PLAYER 3 IS THE WINNER";
+    }
+    if (player1.score == 0 && player2.score == 0 && player3.score == 0 && player4.score != 0) {
+      document.getElementById("4p-winner").innerText = "PLAYER 4 IS THE WINNER";
+    }
   }
 }
