@@ -60,6 +60,10 @@
   height: 30vh;
 }
 
+.div2-1 {
+  width: 50%
+}
+
 .div3 {
   border: 3px solid goldenrod;
   width: 25%;
@@ -116,4 +120,8 @@ p {
 .snatch {
   background-color: aquamarine;
   color: red;
+}
+
+#players-3-lastrow {
+  width: 50%;
 }

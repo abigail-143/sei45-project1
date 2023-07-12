@@ -15,7 +15,7 @@
   <body>
     <main>
       <!-- Start Page -->
-      <div id="starting-page" class="container-fluid gx-0">
+      <div id="starting-page" class="container-fluid gx-0 hide">
         <div class="row justify-content-center">
           <div class="row justify-content-center gx-0">
             <div class="game-title text-center">
@@ -175,13 +175,13 @@
       </div>
       <!-- 2 players layout -->
       <!-- 3 players layout -->
-      <div id="players3-page" class="container-fluid div1 gx-0 hide">
+      <div id="players3-page" class="container-fluid div1 gx-0">
         <div class="row div1-2 align-items-center gx-0">
           <div class="row gx-0">
-            <div class="col-6" style="border: 3px solid hotpink">
+            <div class="col-6">
               <div class="row div2 gx-0">
                 <div class="col-3 div5 justify-content-center">
-                  <div class="row div5-1" style="border: 3px solid grey">
+                  <div class="row div5-1">
                     <div class="div7 gx-0">
                       <p>Player 1: <span id="3p-p1-name"></span></p>
                     </div>
@@ -203,18 +203,18 @@
                 <div class="col-6 div4 justify-content-center">
                   <img
                     id="3p-p1-opencard"
-                    src="./IMG_1126.JPG"
+                    src="./cards/card.png"
                     class="img-fluid object-fit-cover"
                   />
                 </div>
               </div>
             </div>
-            <div class="col-6" style="border: 3px solid red">
+            <div class="col-6">
               <div class="row div2 gx-0">
                 <div class="col-6 div4 justify-content-center">
                   <img
                     id="3p-p2-opencard"
-                    src="./IMG_1126.JPG"
+                    src="./cards/card.png"
                     class="img-fluid object-fit-cover"
                   />
                 </div>
@@ -226,7 +226,7 @@
                   />
                 </div>
                 <div class="col-3 div5 justify-content-center">
-                  <div class="row div5-1" style="border: 3px solid grey">
+                  <div class="row div5-1">
                     <div class="div7 gx-0">
                       <p>Player 2: <span id="3p-p2-name"></span></p>
                     </div>
@@ -256,19 +256,23 @@
             </div>
           </div>
 
-          <div class="row div2 gx-0">
+          <div class="row div2 gx-0 mx-auto" id="players-3-lastrow">
             <div class="col-3 div3 justify-content-center">
               <img
                 id="3p-p3-hiddencard"
                 src="./cards/card.png"
-                class="img-fluid"
+                class="img-fluid object-fit-cover"
               />
             </div>
             <div class="col-6 div4 justify-content-center">
-              <img id="3p-p3-opencard" src="./IMG_1126.JPG" class="img-fluid" />
+              <img
+                id="3p-p3-opencard"
+                src="./cards/card.png"
+                class="img-fluid object-fit-cover"
+              />
             </div>
             <div class="col-3 div5 justify-content-center">
-              <div class="row div5-1" style="border: 3px solid grey">
+              <div class="row div5-1">
                 <div class="div7 gx-0">
                   <p>Player 3: <span id="3p-p3-name"></span></p>
                 </div>
@@ -288,10 +292,10 @@
       <div id="players4-page" class="container-fluid div1 gx-0 hide">
         <div class="row div1-2 align-items-center gx-0">
           <div class="row gx-0">
-            <div class="col-6" style="border: 3px solid hotpink">
+            <div class="col-6">
               <div class="row div2 gx-0">
                 <div class="col-3 div5 justify-content-center">
-                  <div class="row div5-1" style="border: 3px solid grey">
+                  <div class="row div5-1">
                     <div class="div7 gx-0">
                       <p>Player 1: <span id="4p-p1-name"></span></p>
                     </div>
@@ -313,18 +317,18 @@
                 <div class="col-6 div4 justify-content-center">
                   <img
                     id="4p-p1-opencard"
-                    src="./IMG_1126.JPG"
+                    src="./cards/card.png"
                     class="img-fluid object-fit-cover"
                   />
                 </div>
               </div>
             </div>
-            <div class="col-6" style="border: 3px solid red">
+            <div class="col-6">
               <div class="row div2 gx-0">
                 <div class="col-6 div4 justify-content-center">
                   <img
                     id="4p-p2-opencard"
-                    src="./IMG_1126.JPG"
+                    src="./cards/card.png"
                     class="img-fluid object-fit-cover"
                   />
                 </div>
@@ -336,7 +340,7 @@
                   />
                 </div>
                 <div class="col-3 div5 justify-content-center">
-                  <div class="row div5-1" style="border: 3px solid grey">
+                  <div class="row div5-1">
                     <div class="div7 gx-0">
                       <p>Player 2: <span id="4p-p2-name"></span></p>
                     </div>
@@ -367,10 +371,10 @@
           </div>
 
           <div class="row gx-0">
-            <div class="col-6" style="border: 3px solid hotpink">
+            <div class="col-6">
               <div class="row div2 gx-0">
                 <div class="col-3 div5 justify-content-center">
-                  <div class="row div5-1" style="border: 3px solid grey">
+                  <div class="row div5-1">
                     <div class="div7 gx-0">
                       <p>Player 4:<span id="4p-p4-name"></span></p>
                     </div>
@@ -392,18 +396,18 @@
                 <div class="col-6 div4 justify-content-center">
                   <img
                     id="4p-p4-opencard"
-                    src="./IMG_1126.JPG"
+                    src="./cards/card.png"
                     class="img-fluid object-fit-cover"
                   />
                 </div>
               </div>
             </div>
-            <div class="col-6" style="border: 3px solid red">
+            <div class="col-6">
               <div class="row div2 gx-0">
                 <div class="col-6 div4 justify-content-center">
                   <img
                     id="4p-p3-opencard"
-                    src="./IMG_1126.JPG"
+                    src="./cards/card.png"
                     class="img-fluid object-fit-cover"
                   />
                 </div>
@@ -415,7 +419,7 @@
                   />
                 </div>
                 <div class="col-3 div5 justify-content-center">
-                  <div class="row div5-1" style="border: 3px solid grey">
+                  <div class="row div5-1">
                     <div class="div7 gx-0">
                       <p>Player 3: <span id="4p-p3-name"></span></p>
                     </div>
