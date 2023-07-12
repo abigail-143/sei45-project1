@@ -301,15 +301,27 @@ function checkTableCardsValue() {
     }
   }
   if (selectedItem == "3") {
-    if (player2.tableCards.length == 0 && player3.tableCards.length == 0) {
+    if (
+      player2.tableCards.length == 0 &&
+      player3.tableCards.length == 0 &&
+      player1.tableCards.length != 0
+    ) {
       let currentTableCards = [player1.tableCards[0]];
       countValue(currentTableCards);
     }
-    if (player1.tableCards.length == 0 && player3.tableCards.length == 0) {
+    if (
+      player1.tableCards.length == 0 &&
+      player3.tableCards.length == 0 &&
+      player2.tableCards.length != 0
+    ) {
       let currentTableCards = [player2.tableCards[0]];
       countValue(currentTableCards);
     }
-    if (player1.tableCards.length == 0 && player2.tableCards.length == 0) {
+    if (
+      player1.tableCards.length == 0 &&
+      player2.tableCards.length == 0 &&
+      player3.tableCards.length != 0
+    ) {
       let currentTableCards = [player3.tableCards[0]];
       countValue(currentTableCards);
     }
@@ -320,7 +332,7 @@ function checkTableCardsValue() {
     ) {
       let currentTableCards = [player2.tableCards[0], player3.tableCards[0]];
       countValue(currentTableCards);
-    } 
+    }
     if (
       player1.tableCards.length != 0 &&
       player2.tableCards.length != 0 &&
@@ -336,8 +348,12 @@ function checkTableCardsValue() {
     ) {
       let currentTableCards = [player1.tableCards[0], player3.tableCards[0]];
       countValue(currentTableCards);
-    }
-    else {
+    } 
+    else if (
+      player1.tableCards.length != 0 &&
+      player2.tableCards.length != 0 &&
+      player3.tableCards.length != 0
+    ) {
       let currentTableCards = [];
       currentTableCards.push(
         player1.tableCards[player1.tableCards.length - 1],
@@ -408,26 +424,39 @@ window.addEventListener("keydown", (event) => {
   if (selectedItem == "3") {
     if (event.key == "q") {
       document.getElementById("3p-p1-snatch").classList.add("snatch");
+      snatchKeyPressed = "q";
+      checkTableCardsValue();
+      awardCards();
     }
     if (event.key == "p") {
       document.getElementById("3p-p2-snatch").classList.add("snatch");
+      snatchKeyPressed = "p";
+      checkTableCardsValue();
+      awardCards();
     }
     if (event.key == "/") {
       document.getElementById("3p-p3-snatch").classList.add("snatch");
+      snatchKeyPressed = "/";
+      checkTableCardsValue();
+      awardCards();
     }
   }
   if (selectedItem == "4") {
     if (event.key == "q") {
       document.getElementById("4p-p1-snatch").classList.add("snatch");
+      snatchKeyPressed = "q";
     }
     if (event.key == "p") {
       document.getElementById("4p-p2-snatch").classList.add("snatch");
+      snatchKeyPressed = "p";
     }
     if (event.key == "/") {
       document.getElementById("4p-p3-snatch").classList.add("snatch");
+      snatchKeyPressed = "/";
     }
     if (event.key == "z") {
       document.getElementById("4p-p4-snatch").classList.add("snatch");
+      snatchKeyPressed = "z";
     }
   }
 });
@@ -553,54 +582,81 @@ function awardCards() {
   }
   if (selectedItem == "3") {
     // if player1 snatched (check key pressed?) and if checkTableCardsValue has a 5
-    player1.hiddenDeck = player1.hiddenDeck.concat(
-      player1.tableCards,
-      player2.tableCards,
-      player3.tableCards
-    );
-    shuffleCardDeck(player1.hiddenDeck);
-    player1.tableCards = [];
-    player2.tableCards = [];
-    player3.tableCards = [];
+    if (snatchKeyPressed === "q" && allowSnatch === "yes") {
+      player1.hiddenDeck = player1.hiddenDeck.concat(
+        player1.tableCards,
+        player2.tableCards,
+        player3.tableCards
+      );
+      shuffleCardDeck(player1.hiddenDeck);
+      player1.tableCards = [];
+      player2.tableCards = [];
+      player3.tableCards = [];
+      document.getElementById("3p-p1-opencard").src = "./cards/card.png";
+      document.getElementById("3p-p2-opencard").src = "./cards/card.png";
+      document.getElementById("3p-p3-opencard").src = "./cards/card.png";
+    }
     // if player1 snatched and if checkTableCardsValue does not have a 5
-    player2.hiddenDeck.push(player1.hiddenDeck.pop());
-    shuffleCardDeck(player2.hiddenDeck);
-    player3.hiddenDeck.push(player1.hiddenDeck.pop());
-    shuffleCardDeck(player3.hiddenDeck);
+    if (snatchKeyPressed === "q" && allowSnatch === "no") {
+      player2.hiddenDeck.push(player1.hiddenDeck.pop());
+      shuffleCardDeck(player2.hiddenDeck);
+      player3.hiddenDeck.push(player1.hiddenDeck.pop());
+      shuffleCardDeck(player3.hiddenDeck);
+    }
     // if player2 snatched and if checkTableCardsValue has a 5
-    player2.hiddenDeck = player2.hiddenDeck.concat(
-      player1.tableCards,
-      player2.tableCards,
-      player3.tableCards
-    );
-    shuffleCardDeck(player2.hiddenDeck);
-    player1.tableCards = [];
-    player2.tableCards = [];
-    player3.tableCards = [];
+    if (snatchKeyPressed === "p" && allowSnatch === "yes") {
+      player2.hiddenDeck = player2.hiddenDeck.concat(
+        player1.tableCards,
+        player2.tableCards,
+        player3.tableCards
+      );
+      shuffleCardDeck(player2.hiddenDeck);
+      player1.tableCards = [];
+      player2.tableCards = [];
+      player3.tableCards = [];
+      document.getElementById("3p-p1-opencard").src = "./cards/card.png";
+      document.getElementById("3p-p2-opencard").src = "./cards/card.png";
+      document.getElementById("3p-p3-opencard").src = "./cards/card.png";
+    }
     // if player2 snatched and if checkTableCardsValue does not have a 5
-    player1.hiddenDeck.push(player2.hiddenDeck.pop());
-    shuffleCardDeck(player1.hiddenDeck);
-    player3.hiddenDeck.push(player2.hiddenDeck.pop());
-    shuffleCardDeck(player3.hiddenDeck);
+    if (snatchKeyPressed === "p" && allowSnatch === "no") {
+      player1.hiddenDeck.push(player2.hiddenDeck.pop());
+      shuffleCardDeck(player1.hiddenDeck);
+      player3.hiddenDeck.push(player2.hiddenDeck.pop());
+      shuffleCardDeck(player3.hiddenDeck);
+    }
     // if player3 snatched and if checkTableCardsValue have a 5
-    player3.hiddenDeck = player3.hiddenDeck.concat(
-      player1.tableCards,
-      player2.tableCards,
-      player3.tableCards
-    );
-    shuffleCardDeck(player3.hiddenDeck);
-    player1.tableCards = [];
-    player2.tableCards = [];
-    player3.tableCards = [];
+    if (snatchKeyPressed === "/" && allowSnatch === "yes") {
+      player3.hiddenDeck = player3.hiddenDeck.concat(
+        player1.tableCards,
+        player2.tableCards,
+        player3.tableCards
+      );
+      shuffleCardDeck(player3.hiddenDeck);
+      player1.tableCards = [];
+      player2.tableCards = [];
+      player3.tableCards = [];
+      document.getElementById("3p-p1-opencard").src = "./cards/card.png";
+      document.getElementById("3p-p2-opencard").src = "./cards/card.png";
+      document.getElementById("3p-p3-opencard").src = "./cards/card.png";
+    }
     // if player3 snatched and if checkTableCardsValue does not have a 5
-    player1.hiddenDeck.push(player3.hiddenDeck.pop());
-    shuffleCardDeck(player1.hiddenDeck);
-    player2.hiddenDeck.push(player3.hiddenDeck.pop());
-    shuffleCardDeck(player2.hiddenDeck);
+    if (snatchKeyPressed === "/" && allowSnatch === "no") {
+      player1.hiddenDeck.push(player3.hiddenDeck.pop());
+      shuffleCardDeck(player1.hiddenDeck);
+      player2.hiddenDeck.push(player3.hiddenDeck.pop());
+      shuffleCardDeck(player2.hiddenDeck);
+    }
     // wrap the above in their respective "if"s then
     updateScore(player1);
     updateScore(player2);
     updateScore(player3);
+    allowSnatch = "no";
+    setTimeout(() => {
+      document.getElementById("3p-p1-snatch").classList.remove("snatch");
+      document.getElementById("3p-p2-snatch").classList.remove("snatch");
+      document.getElementById("3p-p3-snatch").classList.remove("snatch");
+    }, 200);
   }
   if (selectedItem == "4") {
     // if player1 snatch (check key pressed?) and if checkTableCardsValue has a 5
