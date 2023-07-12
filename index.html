@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    
     <main>
+      <img src="./halli-galli-3.gif" id="selector" class="hide">
       <!-- Start Page -->
       <div id="starting-page" class="container-fluid gx-0">
         <div class="row justify-content-center">
@@ -26,13 +28,20 @@
             <div class="game-writeup text-center">
               <p>
                 Halli Galli is a speed action game in which players watch for
-                sets of exactly five fruit. All players hold their deck face
-                down and take turns dealing one card face up in front of them.
-                As each player reveals her next card, the instant you see a
-                total of five of one kind of fruit on the table, hit the bell.
-                If you're correct, you pick up all the played cards and put them
-                into your deck; if you're wrong, you pay the other players one
-                card each. When you run out of cards, you're out.
+                sets of exactly five food items.
+              </p>
+              <p>
+                All players will start off with equal decks, the sequence which
+                will not be made known to the players.
+              </p>
+              <p>
+                Each player will take turn opening a card from their closed deck. As each player reveals her next card, the
+                instant you see a total of five of one kind of fruit on the
+                table, hit the bell (snatch the cards).</p>
+                <p>If you're correct, you pick up all the
+                played cards and put them into your deck; if you're wrong, you
+                pay the other players one card each. When you run out of cards,
+                you're out.
               </p>
             </div>
           </div>
@@ -96,9 +105,9 @@
       </div>
       <!-- Game Pages -->
       <!-- 2 players layout -->
-      <div id="players2-page" class="container-fluid div1-1 gx-0 hide">
+      <div id="players2-page" class="container-fluid div1-1 gx-0">
         <div class="row div1-2 align-items-center gx-0">
-          <div class="row div2 gx-0">
+          <div class="row div2 gx-0 align-items-center">
             <div class="col-3 div3 justify-content-center">
               <img
                 id="2p-p1-hiddencard"
@@ -127,14 +136,17 @@
                 >
                   <p id="2p-p1-snatch" class="">SNATCH</p>
                   <p class="user-instructions">
-                    "Q" to Snatch, "W" to Open Card
+                    "Z" to Snatch, "X" to Open Card
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="row div2 gx-0 justify-content-center" id="game-table">
+          <div
+            class="row div2 gx-0 justify-content-center align-items-center"
+            id="game-table"
+          >
             <div class="col-3 div5 justify-content-center">
               <div class="row align-items-center">
                 <div class="col justify-content-center">
@@ -143,7 +155,10 @@
               </div>
             </div>
             <div class="col-6 div5 justify-content-center">
-              <img src="./IMG_1126.JPG" class="img-fluid object-fit-cover" />
+              <img
+                src="./cards/reception-bell.png"
+                class="img-fluid object-fit-cover"
+              />
             </div>
             <div class="col-3 div5 justify-content-center">
               <div class="row align-items-center">
@@ -154,7 +169,7 @@
             </div>
           </div>
 
-          <div class="row div2 gx-0">
+          <div class="row div2 gx-0 align-items-center">
             <div class="col-3 div3 justify-content-center">
               <img
                 id="2p-p2-hiddencard"
@@ -183,7 +198,7 @@
                 >
                   <p id="2p-p2-snatch" class="">SNATCH</p>
                   <p class="user-instructions">
-                    "P" to Snatch, "O" to Open Card
+                    "/" to Snatch, "." to Open Card
                   </p>
                 </div>
               </div>
@@ -193,11 +208,11 @@
       </div>
       <!-- 2 players layout -->
       <!-- 3 players layout -->
-      <div id="players3-page" class="container-fluid div1 gx-0 hide">
+      <div id="players3-page" class="container-fluid div1 gx-0">
         <div class="row div1-2 align-items-center gx-0">
           <div class="row gx-0">
             <div class="col-6">
-              <div class="row div2 gx-0">
+              <div class="row div2 gx-0 align-items-center">
                 <div class="col-3 div5 justify-content-center">
                   <div class="row div5-1">
                     <div class="div7 gx-0">
@@ -234,7 +249,7 @@
               </div>
             </div>
             <div class="col-6">
-              <div class="row div2 gx-0">
+              <div class="row div2 gx-0 align-items-center">
                 <div class="col-6 div4 justify-content-center">
                   <img
                     id="3p-p2-opencard"
@@ -272,7 +287,10 @@
             </div>
           </div>
 
-          <div class="row div2 gx-0 justify-content-center" id="game-table">
+          <div
+            class="row div2 gx-0 justify-content-center align-items-center"
+            id="game-table"
+          >
             <div class="col-3 div5 justify-content-center">
               <div class="row align-items-center">
                 <div class="col justify-content-center">
@@ -281,7 +299,10 @@
               </div>
             </div>
             <div class="col-6 div5 justify-content-center">
-              <img src="./IMG_1126.JPG" class="img-fluid object-fit-cover" />
+              <img
+                src="./cards/reception-bell.png"
+                class="img-fluid object-fit-cover"
+              />
             </div>
             <div class="col-3 div5 justify-content-center">
               <div class="row align-items-center">
@@ -292,7 +313,10 @@
             </div>
           </div>
 
-          <div class="row div2 gx-0 mx-auto" id="players-3-lastrow">
+          <div
+            class="row div2 gx-0 mx-auto align-items-center"
+            id="players-3-lastrow"
+          >
             <div class="col-3 div3 justify-content-center">
               <img
                 id="3p-p3-hiddencard"
@@ -328,11 +352,11 @@
       </div>
       <!-- 3 players layout -->
       <!-- 4 players layout -->
-      <div id="players4-page" class="container-fluid div1 gx-0 hide">
+      <div id="players4-page" class="container-fluid div1 gx-0">
         <div class="row div1-2 align-items-center gx-0">
           <div class="row gx-0">
             <div class="col-6">
-              <div class="row div2 gx-0">
+              <div class="row div2 gx-0 align-items-center">
                 <div class="col-3 div5 justify-content-center">
                   <div class="row div5-1">
                     <div class="div7 gx-0">
@@ -344,7 +368,7 @@
                     <div class="div7 gx-0 text-center">
                       <p id="4p-p1-snatch" class="">SNATCH</p>
                       <p class="user-instructions">
-                        "/" to Snatch, "." to Open Card
+                        "Q" to Snatch, "W" to Open Card
                       </p>
                     </div>
                   </div>
@@ -366,7 +390,7 @@
               </div>
             </div>
             <div class="col-6">
-              <div class="row div2 gx-0">
+              <div class="row div2 gx-0 align-items-center">
                 <div class="col-6 div4 justify-content-center">
                   <img
                     id="4p-p2-opencard"
@@ -392,7 +416,7 @@
                     <div class="div7 gx-0 text-center">
                       <p id="4p-p2-snatch" class="">SNATCH</p>
                       <p class="user-instructions">
-                        "/" to Snatch, "." to Open Card
+                        "P" to Snatch, "O" to Open Card
                       </p>
                     </div>
                   </div>
@@ -401,7 +425,10 @@
             </div>
           </div>
 
-          <div class="row div2 gx-0 justify-content-center" id="game-table">
+          <div
+            class="row div2 gx-0 justify-content-center align-items-center"
+            id="game-table"
+          >
             <div class="col-3 div5 justify-content-center">
               <div class="row align-items-center">
                 <div class="col justify-content-center">
@@ -410,7 +437,10 @@
               </div>
             </div>
             <div class="col-6 div5 justify-content-center">
-              <img src="./IMG_1126.JPG" class="img-fluid object-fit-cover" />
+              <img
+                src="./cards/reception-bell.png"
+                class="img-fluid object-fit-cover"
+              />
             </div>
             <div class="col-3 div5 justify-content-center">
               <div class="row align-items-center">
@@ -423,7 +453,7 @@
 
           <div class="row gx-0">
             <div class="col-6">
-              <div class="row div2 gx-0">
+              <div class="row div2 gx-0 align-items-center">
                 <div class="col-3 div5 justify-content-center">
                   <div class="row div5-1">
                     <div class="div7 gx-0">
@@ -435,7 +465,7 @@
                     <div class="div7 gx-0 text-center">
                       <p id="4p-p4-snatch" class="">SNATCH</p>
                       <p class="user-instructions">
-                        "/" to Snatch, "." to Open Card
+                        "Z" to Snatch, "X" to Open Card
                       </p>
                     </div>
                   </div>
@@ -457,7 +487,7 @@
               </div>
             </div>
             <div class="col-6">
-              <div class="row div2 gx-0">
+              <div class="row div2 gx-0 align-items-center">
                 <div class="col-6 div4 justify-content-center">
                   <img
                     id="4p-p3-opencard"

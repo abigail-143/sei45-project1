@@ -3,15 +3,25 @@
   padding: 0;
 }
 
+
 .hide {
   display: none;
 }
 
+#selector {
+  width: 100%;
+  height: 100%;
+}
+
 #starting-page {
   border: 3px solid black;
-  width: 100vw;
-  height: 100vh;
+  width: 99vw;
+  height: 99vh;
   padding-top: 10%;
+  background-image:url('./halli-galli-3.gif');
+  background-attachment: fixed;
+  background-repeat: repeat;
+  
 }
 
 .game-writeup {
@@ -34,7 +44,7 @@
 .div1 {
   border: 3px solid blue;
   height: 100vh;
-  width: 100vw;
+  width: 99vw;
 }
 
 .div1-1 {
@@ -81,7 +91,7 @@
 .div5 {
   border: 3px solid rosybrown;
   width: 25%;
-  height: 100%;
+  height: 80%;
   display: flex;
 }
 
