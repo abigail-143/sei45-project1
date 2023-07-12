@@ -15,7 +15,7 @@
   <body>
     <main>
       <!-- Start Page -->
-      <div id="starting-page" class="container-fluid gx-0 hide">
+      <div id="starting-page" class="container-fluid gx-0">
         <div class="row justify-content-center">
           <div class="row justify-content-center gx-0">
             <div class="game-title text-center">
@@ -121,8 +121,14 @@
                 <div class="div7 gx-0">
                   <p>Score: <span id="2p-p1-score"></span></p>
                 </div>
-                <div id="2p-p1-snatch" class="div7 gx-0 text-center">
-                  <p>SNATCH</p>
+                <div
+                  class="col div7 gx-0 text-center my-auto"
+                  style="background-color: beige"
+                >
+                  <p id="2p-p1-snatch" class="">SNATCH</p>
+                  <p class="user-instructions">
+                    "Q" to Snatch, "W" to Open Card
+                  </p>
                 </div>
               </div>
             </div>
@@ -130,14 +136,20 @@
 
           <div class="row div2 gx-0 justify-content-center" id="game-table">
             <div class="col-3 div5 justify-content-center">
-              <!-- <img src="./IMG_1126.JPG" class="img-fluid object-fit-cover" /> -->
+              <div class="row align-items-center">
+                <div class="col justify-content-center">
+                  <p id="2p-winner-1">HUEHUEHUEHUEHUE</p>
+                </div>
+              </div>
             </div>
             <div class="col-6 div5 justify-content-center">
               <img src="./IMG_1126.JPG" class="img-fluid object-fit-cover" />
             </div>
             <div class="col-3 div5 justify-content-center">
-              <div class="justify-content-center">
-                <p id="2p-winner">HUEHUEHUEHUEHUE</p>
+              <div class="row align-items-center">
+                <div class="col justify-content-center">
+                  <p id="2p-winner-2">HUEHUEHUEHUEHUE</p>
+                </div>
               </div>
             </div>
           </div>
@@ -165,8 +177,14 @@
                 <div class="div7 gx-0">
                   <p>Score: <span id="2p-p2-score"></span></p>
                 </div>
-                <div id="2p-p2-snatch" class="div7 gx-0 text-center">
-                  <p>SNATCH</p>
+                <div
+                  class="div7 gx-0 text-center"
+                  style="background-color: beige"
+                >
+                  <p id="2p-p2-snatch" class="">SNATCH</p>
+                  <p class="user-instructions">
+                    "P" to Snatch, "O" to Open Card
+                  </p>
                 </div>
               </div>
             </div>
@@ -175,7 +193,7 @@
       </div>
       <!-- 2 players layout -->
       <!-- 3 players layout -->
-      <div id="players3-page" class="container-fluid div1 gx-0">
+      <div id="players3-page" class="container-fluid div1 gx-0 hide">
         <div class="row div1-2 align-items-center gx-0">
           <div class="row gx-0">
             <div class="col-6">
@@ -188,8 +206,14 @@
                     <div class="div7 gx-0">
                       <p>Score: <span id="3p-p1-score"></span></p>
                     </div>
-                    <div id="3p-p1-snatch" class="div7 gx-0 text-center">
-                      <p>SNATCH</p>
+                    <div
+                      class="div7 gx-0 text-center"
+                      style="background-color: beige"
+                    >
+                      <p id="3p-p1-snatch" class="">SNATCH</p>
+                      <p class="user-instructions">
+                        "Q" to Snatch, "W" to Open Card
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -233,8 +257,14 @@
                     <div class="div7 gx-0">
                       <p>Score: <span id="3p-p2-score"></span></p>
                     </div>
-                    <div id="3p-p2-snatch" class="div7 gx-0 text-center">
-                      <p>SNATCH</p>
+                    <div
+                      class="div7 gx-0 text-center"
+                      style="background-color: beige"
+                    >
+                      <p id="3p-p2-snatch" class="">SNATCH</p>
+                      <p class="user-instructions">
+                        "P" to Snatch, "O" to Open Card
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -244,14 +274,20 @@
 
           <div class="row div2 gx-0 justify-content-center" id="game-table">
             <div class="col-3 div5 justify-content-center">
-              <!-- <img src="./IMG_1126.JPG" class="img-fluid object-fit-cover" /> -->
+              <div class="row align-items-center">
+                <div class="col justify-content-center">
+                  <p id="3p-winner-1">HUEHUEHUEHUEHUE</p>
+                </div>
+              </div>
             </div>
             <div class="col-6 div5 justify-content-center">
               <img src="./IMG_1126.JPG" class="img-fluid object-fit-cover" />
             </div>
             <div class="col-3 div5 justify-content-center">
-              <div class="justify-content-center">
-                <p id="3p-winner">HUEHUEHUEHUEHUE</p>
+              <div class="row align-items-center">
+                <div class="col justify-content-center">
+                  <p id="3p-winner-2">HUEHUEHUEHUEHUE</p>
+                </div>
               </div>
             </div>
           </div>
@@ -279,8 +315,11 @@
                 <div class="div7 gx-0">
                   <p>Score: <span id="3p-p3-score"></span></p>
                 </div>
-                <div id="3p-p3-snatch" class="div7 gx-0 text-center">
-                  <p>SNATCH</p>
+                <div class="div7 gx-0 text-center">
+                  <p id="3p-p3-snatch" class="">SNATCH</p>
+                  <p class="user-instructions">
+                    "/" to Snatch, "." to Open Card
+                  </p>
                 </div>
               </div>
             </div>
@@ -302,8 +341,11 @@
                     <div class="div7 gx-0">
                       <p>Score: <span id="4p-p1-score"></span></p>
                     </div>
-                    <div id="4p-p1-snatch" class="div7 gx-0 text-center">
-                      <p>SNATCH</p>
+                    <div class="div7 gx-0 text-center">
+                      <p id="4p-p1-snatch" class="">SNATCH</p>
+                      <p class="user-instructions">
+                        "/" to Snatch, "." to Open Card
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -347,8 +389,11 @@
                     <div class="div7 gx-0">
                       <p>Score: <span id="4p-p2-score"></span></p>
                     </div>
-                    <div id="4p-p2-snatch" class="div7 gx-0 text-center">
-                      <p>SNATCH</p>
+                    <div class="div7 gx-0 text-center">
+                      <p id="4p-p2-snatch" class="">SNATCH</p>
+                      <p class="user-instructions">
+                        "/" to Snatch, "." to Open Card
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -358,14 +403,20 @@
 
           <div class="row div2 gx-0 justify-content-center" id="game-table">
             <div class="col-3 div5 justify-content-center">
-              <!-- <img src="./IMG_1126.JPG" class="img-fluid object-fit-cover" /> -->
+              <div class="row align-items-center">
+                <div class="col justify-content-center">
+                  <p id="4p-winner-1">HUEHUEHUEHUEHUE</p>
+                </div>
+              </div>
             </div>
             <div class="col-6 div5 justify-content-center">
               <img src="./IMG_1126.JPG" class="img-fluid object-fit-cover" />
             </div>
             <div class="col-3 div5 justify-content-center">
-              <div class="justify-content-center">
-                <p id="4p-winner">HUEHUEHUEHUEHUE</p>
+              <div class="row align-items-center">
+                <div class="col justify-content-center">
+                  <p id="4p-winner-2">HUEHUEHUEHUEHUE</p>
+                </div>
               </div>
             </div>
           </div>
@@ -381,8 +432,11 @@
                     <div class="div7 gx-0">
                       <p>Score: <span id="4p-p4-score"></span></p>
                     </div>
-                    <div id="4p-p4-snatch" class="div7 gx-0 text-center">
-                      <p>SNATCH</p>
+                    <div class="div7 gx-0 text-center">
+                      <p id="4p-p4-snatch" class="">SNATCH</p>
+                      <p class="user-instructions">
+                        "/" to Snatch, "." to Open Card
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -426,8 +480,11 @@
                     <div class="div7 gx-0">
                       <p>Score: <span id="4p-p3-score"></span></p>
                     </div>
-                    <div id="4p-p3-snatch" class="div7 gx-0 text-center">
-                      <p>SNATCH</p>
+                    <div class="div7 gx-0 text-center">
+                      <p id="4p-p3-snatch" class="">SNATCH</p>
+                      <p class="user-instructions">
+                        "/" to Snatch, "." to Open Card
+                      </p>
                     </div>
                   </div>
                 </div>

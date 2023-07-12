@@ -981,21 +981,26 @@ function awardCards() {
 function checkForWinner() {
   if (selectedItem == "2") {
     if (player1.score == 0) {
-      document.getElementById("2p-winner").innerText = "PLAYER 2 IS THE WINNER";
+      document.getElementById("2p-winner-1").innerText = "PLAYER 2 IS THE WINNER";
+      document.getElementById("2p-winner-2").innerText = "PLAYER 2 IS THE WINNER";
     }
     if (player2.score == 0) {
-      document.getElementById("2p-winner").innerText = "PLAYER 1 IS THE WINNER";
+      document.getElementById("2p-winner-1").innerText = "PLAYER 1 IS THE WINNER";
+      document.getElementById("2p-winner-2").innerText = "PLAYER 1 IS THE WINNER";
     }
   }
   if (selectedItem == "3") {
     if (player1.score != 0 && player2.score == 0 && player3.score == 0) {
-      document.getElementById("3p-winner").innerText = "PLAYER 1 IS THE WINNER";
+      document.getElementById("3p-winner-1").innerText = "PLAYER 1 IS THE WINNER";
+      document.getElementById("3p-winner-2").innerText = "PLAYER 1 IS THE WINNER";
     }
     if (player1.score == 0 && player2.score != 0 && player3.score == 0) {
-      document.getElementById("3p-winner").innerText = "PLAYER 2 IS THE WINNER";
+      document.getElementById("3p-winner-1").innerText = "PLAYER 2 IS THE WINNER";
+      document.getElementById("3p-winner-2").innerText = "PLAYER 2 IS THE WINNER";
     }
     if (player1.score == 0 && player2.score == 0 && player3.score != 0) {
-      document.getElementById("3p-winner").innerText = "PLAYER 3 IS THE WINNER";
+      document.getElementById("3p-winner-1").innerText = "PLAYER 3 IS THE WINNER";
+      document.getElementById("3p-winner-2").innerText = "PLAYER 3 IS THE WINNER";
     }
   }
   if (selectedItem == "4") {
@@ -1005,7 +1010,8 @@ function checkForWinner() {
       player3.score == 0 &&
       player4.score == 0
     ) {
-      document.getElementById("4p-winner").innerText = "PLAYER 1 IS THE WINNER";
+      document.getElementById("4p-winner-1").innerText = "PLAYER 1 IS THE WINNER";
+      document.getElementById("4p-winner-2").innerText = "PLAYER 1 IS THE WINNER";
     }
     if (
       player1.score == 0 &&
@@ -1013,7 +1019,8 @@ function checkForWinner() {
       player3.score == 0 &&
       player4.score == 0
     ) {
-      document.getElementById("4p-winner").innerText = "PLAYER 2 IS THE WINNER";
+      document.getElementById("4p-winner-1").innerText = "PLAYER 2 IS THE WINNER";
+      document.getElementById("4p-winner-2").innerText = "PLAYER 2 IS THE WINNER";
     }
     if (
       player1.score == 0 &&
@@ -1021,7 +1028,8 @@ function checkForWinner() {
       player3.score != 0 &&
       player4.score == 0
     ) {
-      document.getElementById("4p-winner").innerText = "PLAYER 3 IS THE WINNER";
+      document.getElementById("4p-winner-1").innerText = "PLAYER 3 IS THE WINNER";
+      document.getElementById("4p-winner-2").innerText = "PLAYER 3 IS THE WINNER";
     }
     if (
       player1.score == 0 &&
@@ -1029,7 +1037,8 @@ function checkForWinner() {
       player3.score == 0 &&
       player4.score != 0
     ) {
-      document.getElementById("4p-winner").innerText = "PLAYER 4 IS THE WINNER";
+      document.getElementById("4p-winner-1").innerText = "PLAYER 4 IS THE WINNER";
+      document.getElementById("4p-winner-2").innerText = "PLAYER 4 IS THE WINNER";
     }
   }
 }
