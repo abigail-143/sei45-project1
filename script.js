@@ -283,13 +283,13 @@ function countValue(array) {
 let allowSnatch = "no";
 function checkTableCardsValue() {
   if (selectedItem == "2") {
-    if (player2.tableCards.length == 0) {
+    if (player2.tableCards.length == 0 && player1.tableCards.length != 0) {
       // to catch when only player1 has open card but not player2 //
-      let currentTableCards = [player1.tableCards[0]];
+      let currentTableCards = [player1.tableCards[player1.tableCards.length - 1]];
       countValue(currentTableCards);
     }
-    if (player1.tableCards.length == 0) {
-      let currentTableCards = [player2.tableCards[0]];
+    if (player2.tableCards.length != 0 && player1.tableCards.length == 0) {
+      let currentTableCards = [player2.tableCards[player2.tableCards.length - 1]];
       countValue(currentTableCards);
     } else {
       let currentTableCards = [];
