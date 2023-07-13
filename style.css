@@ -3,7 +3,6 @@
   padding: 0;
 }
 
-
 .hide {
   display: none;
 }
@@ -21,20 +20,20 @@ main {
   /* border: 3px solid black; */
   width: 99vw;
   height: 99vh;
-  padding-top: 10%;
+  padding-top: 5%;
   /* background-image:url('./halli-galli.gif');
   background-attachment: fixed; */
 }
 
 #game-name {
   font-size: 5rem;
-  font-family: 'Shrikhand', cursive;
+  font-family: "Shrikhand", cursive;
   color: rgba(148, 185, 255, 1);
 }
 
 .game-title {
   background-color: rgba(205, 255, 216, 0.9);
-  width: 50vh;
+  width: 40%;
   padding-top: 8px;
   padding-right: 5px;
   padding-left: 5px;
@@ -47,7 +46,7 @@ main {
   width: 65%;
   background-color: rgba(148, 185, 255, 0.9);
   color: rgba(205, 255, 216, 1);
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-size: 1.1rem;
 }
 
@@ -55,7 +54,7 @@ main {
   background-color: rgba(205, 255, 216, 1);
   border-color: transparent;
   color: rgba(148, 185, 255, 0.9);
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   text-align: center;
 }
 
@@ -63,7 +62,7 @@ main {
   background-color: rgba(205, 255, 216, 1);
   border-color: rgba(148, 185, 255, 0.9);
   color: rgba(148, 185, 255, 1);
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   width: 120%;
 }
 
@@ -72,7 +71,7 @@ main {
   margin: 10px 0;
   background-color: rgba(148, 185, 255, 0.9);
   color: rgba(205, 255, 216, 1);
-  font-family: 'Shrikhand', cursive;
+  font-family: "Shrikhand", cursive;
 }
 
 .div0 {
@@ -159,7 +158,7 @@ main {
 
 .div7-1 {
   width: 100%;
-  height: 50%
+  height: 50%;
 }
 
 img {
@@ -195,6 +194,6 @@ p {
 }
 
 .in-game-paragraph {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   margin: 5px;
 }
