@@ -205,22 +205,28 @@ function updateScore(user) {
   if (selectedItem == "2") {
     document.getElementById("2p-p1-score").innerText = player1.score;
     document.getElementById("2p-p2-score").innerText = player2.score;
+    if (player1.score == 0) {
+      document.getElementById("2p-p1-hiddencard").src = "./cards/no-cards.png";
+    }
+    if (player2.score == 0) {
+      document.getElementById("2p-p2-hiddencard").src = "./cards/no-cards.png";
+    }
   }
   if (selectedItem == "3") {
     document.getElementById("3p-p1-score").innerText = player1.score;
     document.getElementById("3p-p2-score").innerText = player2.score;
     document.getElementById("3p-p3-score").innerText = player3.score;
     if (player1.score == 0) {
-      console.log(player1.score);
       document.getElementById("3p-p1-snatch").innerText = "You lost.";
+      document.getElementById("3p-p1-hiddencard").src = "./cards/no-cards.png";
     }
     if (player2.score == 0) {
-      console.log(player2.score);
       document.getElementById("3p-p2-snatch").innerText = "You lost.";
+      document.getElementById("3p-p2-hiddencard").src = "./cards/no-cards.png";
     }
     if (player3.score == 0) {
-      console.log(player3.score);
       document.getElementById("3p-p3-snatch").innerText = "You lost.";
+      document.getElementById("3p-p3-hiddencard").src = "./cards/no-cards.png";
     }
   }
   if (selectedItem == "4") {
@@ -228,6 +234,22 @@ function updateScore(user) {
     document.getElementById("4p-p2-score").innerText = player2.score;
     document.getElementById("4p-p3-score").innerText = player3.score;
     document.getElementById("4p-p4-score").innerText = player4.score;
+    if (player1.score == 0) {
+      document.getElementById("4p-p1-snatch").innerText = "You lost.";
+      document.getElementById("4p-p1-hiddencard").src = "./cards/no-cards.png";
+    }
+    if (player2.score == 0) {
+      document.getElementById("4p-p2-snatch").innerText = "You lost.";
+      document.getElementById("4p-p2-hiddencard").src = "./cards/no-cards.png";
+    }
+    if (player3.score == 0) {
+      document.getElementById("4p-p3-snatch").innerText = "You lost.";
+      document.getElementById("4p-p3-hiddencard").src = "./cards/no-cards.png";
+    }
+    if (player4.score == 0) {
+      document.getElementById("4p-p4-snatch").innerText = "You lost.";
+      document.getElementById("4p-p4-hiddencard").src = "./cards/no-cards.png";
+    }
   }
 }
 
