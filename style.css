@@ -17,12 +17,9 @@ main {
 }
 
 #starting-page {
-  /* border: 3px solid black; */
   width: 99vw;
   height: 99vh;
   padding-top: 7%;
-  /* background-image:url('./halli-galli.gif');
-  background-attachment: fixed; */
 }
 
 #game-name {
@@ -42,7 +39,6 @@ main {
 .game-writeup {
   padding: 10px;
   margin: 10px 0;
-  /* border: 3px solid green; */
   width: 65%;
   background-color: rgba(148, 185, 255, 0.9);
   color: rgba(205, 255, 216, 1);
@@ -75,36 +71,30 @@ main {
 }
 
 .div0 {
-  /* border: 3px solid green; */
   height: 20px;
 }
 
 .div1 {
-  /* border: 3px solid blue; */
   height: 100vh;
   width: 99vw;
 }
 
 .div1-1 {
-  /* border: 3px solid greenyellow; */
   height: 100vh;
   width: 60vw;
 }
 
 .div1-2 {
-  /* border: 3px solid black; */
   height: 100%;
   width: 100%;
 }
 
 .div1-3 {
-  /* border: 3px solid fuchsia; */
   height: 70vh;
   width: 80vw;
 }
 
 .div2 {
-  /* border: 3px solid pink; */
   height: 30vh;
 }
 
@@ -114,21 +104,18 @@ main {
 }
 
 .div3 {
-  /* border: 3px solid goldenrod; */
   width: 25%;
   height: 100%;
   display: flex;
 }
 
 .div4 {
-  /* border: 3px solid greenyellow; */
   width: 50%;
   height: 100%;
   display: flex;
 }
 
 .div5 {
-  /* border: 3px solid rosybrown; */
   width: 25%;
   height: 80%;
   display: flex;
@@ -140,7 +127,6 @@ main {
 }
 
 .div6 {
-  /* border: 3px solid sandybrown; */
   width: 50%;
   height: auto;
 }
@@ -178,7 +164,6 @@ p {
 }
 
 .snatch {
-  /* background-color: aquamarine; */
   color: red;
   font-weight: bold;
   font-size: 1.4rem;

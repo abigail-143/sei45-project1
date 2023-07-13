@@ -269,18 +269,12 @@ function countValue(array) {
   let tableCounts = [...counts].map(([key, value]) => {
     return { key, value };
   }); // this will give an array of objects that will have the food and their summed value as the key/value pairs //
-  console.log("tableCounts");
-  console.log(tableCounts);
 
   for (let i = 0; i < tableCounts.length; i++) {
     if (tableCounts[i].value === 5) {
       return (allowSnatch = "yes");
     }
-
-    // else {
-    //  console.log("no");
-    //  return (allowSnatch = "no");
-    // } // this is to check if there's a count of "5" for any food cards on the table //
+    // this is to check if there's a count of "5" for any food cards on the table //
   }
 }
 
@@ -398,8 +392,6 @@ function checkTableCardsValue() {
         player1.tableCards[player1.tableCards.length - 1],
       ];
       countValue(currentTableCards);
-      console.log("currentTableCards");
-      console.log(currentTableCards);
     }
     if (
       player1.tableCards.length == 0 &&
@@ -411,8 +403,6 @@ function checkTableCardsValue() {
         player2.tableCards[player2.tableCards.length - 1],
       ];
       countValue(currentTableCards);
-      console.log("currentTableCards");
-      console.log(currentTableCards);
     }
     if (
       player1.tableCards.length == 0 &&
@@ -424,8 +414,6 @@ function checkTableCardsValue() {
         player3.tableCards[player3.tableCards.length - 1],
       ];
       countValue(currentTableCards);
-      console.log("currentTableCards");
-      console.log(currentTableCards);
     }
     if (
       player1.tableCards.length == 0 &&
@@ -437,8 +425,6 @@ function checkTableCardsValue() {
         player4.tableCards[player4.tableCards.length - 1],
       ];
       countValue(currentTableCards);
-      console.log("currentTableCards");
-      console.log(currentTableCards);
     }
     if (
       player1.tableCards.length != 0 &&
@@ -451,8 +437,6 @@ function checkTableCardsValue() {
         player2.tableCards[player2.tableCards.length - 1],
       ];
       countValue(currentTableCards);
-      console.log("currentTableCards");
-      console.log(currentTableCards);
     }
     if (
       player1.tableCards.length == 0 &&
@@ -465,8 +449,6 @@ function checkTableCardsValue() {
         player3.tableCards[player3.tableCards.length - 1],
       ];
       countValue(currentTableCards);
-      console.log("currentTableCards");
-      console.log(currentTableCards);
     }
     if (
       player1.tableCards.length == 0 &&
@@ -479,8 +461,6 @@ function checkTableCardsValue() {
         player4.tableCards[player4.tableCards.length - 1],
       ];
       countValue(currentTableCards);
-      console.log("currentTableCards");
-      console.log(currentTableCards);
     }
     if (
       player1.tableCards.length != 0 &&
@@ -493,8 +473,6 @@ function checkTableCardsValue() {
         player3.tableCards[player3.tableCards.length - 1],
       ];
       countValue(currentTableCards);
-      console.log("currentTableCards");
-      console.log(currentTableCards);
     }
     if (
       player1.tableCards.length != 0 &&
@@ -507,8 +485,6 @@ function checkTableCardsValue() {
         player4.tableCards[player4.tableCards.length - 1],
       ];
       countValue(currentTableCards);
-      console.log("currentTableCards");
-      console.log(currentTableCards);
     }
     if (
       player1.tableCards.length == 0 &&
@@ -521,8 +497,6 @@ function checkTableCardsValue() {
         player4.tableCards[player4.tableCards.length - 1],
       ];
       countValue(currentTableCards);
-      console.log("currentTableCards");
-      console.log(currentTableCards);
     }
 
     if (
@@ -537,8 +511,6 @@ function checkTableCardsValue() {
         player3.tableCards[player3.tableCards.length - 1],
       ];
       countValue(currentTableCards);
-      console.log("currentTableCards");
-      console.log(currentTableCards);
     }
     if (
       player1.tableCards.length != 0 &&
@@ -552,8 +524,6 @@ function checkTableCardsValue() {
         player4.tableCards[player4.tableCards.length - 1],
       ];
       countValue(currentTableCards);
-      console.log("currentTableCards");
-      console.log(currentTableCards);
     }
     if (
       player1.tableCards.length != 0 &&
@@ -567,8 +537,6 @@ function checkTableCardsValue() {
         player4.tableCards[player4.tableCards.length - 1],
       ];
       countValue(currentTableCards);
-      console.log("currentTableCards");
-      console.log(currentTableCards);
     }
     if (
       player1.tableCards.length == 0 &&
@@ -582,8 +550,6 @@ function checkTableCardsValue() {
         player4.tableCards[player4.tableCards.length - 1],
       ];
       countValue(currentTableCards);
-      console.log("currentTableCards");
-      console.log(currentTableCards);
     }
     if (
       player1.tableCards.length != 0 &&
@@ -599,8 +565,6 @@ function checkTableCardsValue() {
         player4.tableCards[player4.tableCards.length - 1]
       );
       countValue(currentTableCards);
-      console.log("currentTableCards");
-      console.log(currentTableCards);
     }
   }
 }
@@ -765,7 +729,6 @@ function awardCards() {
     }
     // if player1 snatched and if checkTableCardsValue does not have a 5
     if (snatchKeyPressed == "z" && allowSnatch == "no") {
-      console.log("player1 snatch NOT successful");
       player2.hiddenDeck.push(player1.hiddenDeck.pop());
       shuffleCardDeck(player2.hiddenDeck);
     }
@@ -989,7 +952,6 @@ function awardCards() {
     updateScore(player2);
     updateScore(player3);
     updateScore(player4);
-    console.log("score updated");
     allowSnatch = "no";
     setTimeout(() => {
       document.getElementById("4p-p1-snatch").classList.remove("snatch");
