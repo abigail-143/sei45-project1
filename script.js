@@ -606,25 +606,25 @@ window.addEventListener("keydown", (event) => {
     }
   }
   if (selectedItem == "4") {
-    if (event.key == "q") {
+    if (event.key == "q" && player1.score != 0) {
       document.getElementById("4p-p1-snatch").classList.add("snatch");
       snatchKeyPressed = "q";
       checkTableCardsValue();
       awardCards();
     }
-    if (event.key == "p") {
+    if (event.key == "p" && player2.score != 0) {
       document.getElementById("4p-p2-snatch").classList.add("snatch");
       snatchKeyPressed = "p";
       checkTableCardsValue();
       awardCards();
     }
-    if (event.key == "/") {
+    if (event.key == "/" && player3.score != 0) {
       document.getElementById("4p-p3-snatch").classList.add("snatch");
       snatchKeyPressed = "/";
       checkTableCardsValue();
       awardCards();
     }
-    if (event.key == "z") {
+    if (event.key == "z" && player4.score != 0) {
       document.getElementById("4p-p4-snatch").classList.add("snatch");
       snatchKeyPressed = "z";
       checkTableCardsValue();
