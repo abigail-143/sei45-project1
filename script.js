@@ -188,7 +188,7 @@ function shuffleCardDeck(array) {
   return array;
 }
 
-// will distribute the initial 14 cards to each player. if there's only 2 players, total cards in the playing arena is 28. if there's only 3 players, total cards in the playing area is 42
+// will distribute the initial 14 cards to each player. if there's only 2 players, total cards in the playing area is 28. if there's only 3 players, total cards in the playing area is 42
 function distributeCardDeck() {
   const chunkSize = 14;
   let splitCardDeck = [];
