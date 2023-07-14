@@ -50,10 +50,13 @@ Once the player has opened up all the cards in their hidden carddeck, which brin
 ## Online Resources & References
 
 . Learning how to shuffle card decks
+
 [https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
 
 . Learning to split arrays
+
 [https://stackoverflow.com/questions/8495687/split-array-into-chunks](https://stackoverflow.com/questions/8495687/split-array-into-chunks)
 
 . How to check values in objects
+
 [https://stackoverflow.com/questions/19233283/sum-javascript-object-propertya-values-with-the-same-object-propertyb-in-an-arra](https://stackoverflow.com/questions/19233283/sum-javascript-object-propertya-values-with-the-same-object-propertyb-in-an-arra)
